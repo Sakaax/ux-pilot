@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.ux-pilot/
+*.tgz
+.DS_Store

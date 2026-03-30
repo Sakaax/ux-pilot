@@ -1,0 +1,27 @@
+{
+  "name": "ux-pilot",
+  "version": "0.1.0",
+  "description": "Your UX co-pilot — from idea to validated flow, in your terminal.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "ux-pilot": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "bun test",
+    "preview": "bun run src/preview/server.ts"
+  },
+  "keywords": ["claude-code", "claude-code-plugin", "ux", "design", "preview"],
+  "author": "Sakaax",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sakaax/ux-pilot"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "@types/bun": "^1.2.0"
+  }
+}
