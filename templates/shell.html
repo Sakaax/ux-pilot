@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ux-pilot preview</title>
+  <link rel="stylesheet" href="/base.css" />
+  <style>
+    .toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--ux-toolbar-h);
+      background: var(--ux-surface);
+      border-bottom: 1px solid var(--ux-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 9999;
+      font-size: 13px;
+    }
+    .toolbar-section {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toolbar button {
+      background: var(--ux-border);
+      color: var(--ux-text);
+      border: none;
+      padding: 4px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .toolbar button:hover { background: var(--ux-accent); }
+    .toolbar button.active { background: var(--ux-accent); }
+    .toolbar button.approve { background: #166534; }
+    .toolbar button.approve:hover { background: #15803d; }
+    .toolbar button.reject { background: #991b1b; }
+    .toolbar button.reject:hover { background: #b91c1c; }
+    .toolbar .screen-name { color: var(--ux-text-muted); }
+    .preview-frame {
+      margin-top: var(--ux-toolbar-h);
+      width: 100%;
+      min-height: calc(100dvh - var(--ux-toolbar-h));
+    }
+    .preview-frame iframe {
+      width: 100%;
+      height: calc(100dvh - var(--ux-toolbar-h));
+      border: none;
+    }
+    .welcome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100dvh - var(--ux-toolbar-h));
+      color: var(--ux-text-muted);
+      gap: 16px;
+    }
+    .welcome h1 { font-size: 24px; color: var(--ux-text); }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="toolbar-section">
+      <button id="prev-btn" disabled>&larr; Prev</button>
+      <span class="screen-name" id="screen-label">ux-pilot preview</span>
+      <button id="next-btn" disabled>Next &rarr;</button>
+    </div>
+    <div class="toolbar-section" id="versions-bar"></div>
+    <div class="toolbar-section">
+      <button class="approve" id="approve-btn">Approve</button>
+      <button class="reject" id="reject-btn">Reject</button>
+    </div>
+  </div>
+  <div class="preview-frame" id="preview">
+    <div class="welcome">
+      <h1>ux-pilot</h1>
+      <p>Waiting for screens... Go back to Claude and start designing.</p>
+    </div>
+  </div>
+  <script>
+    const evtSource = new EventSource("/__sse");
+    evtSource.onmessage = function(e) {
+      try {
+        const data = JSON.parse(e.data);
+        if (data.type === "reload") {
+          location.reload();
+        }
+        if (data.type === "screen") {
+          const iframe = document.createElement("iframe");
+          iframe.src = "/screens/" + data.file;
+          const preview = document.getElementById("preview");
+          preview.textContent = "";
+          preview.appendChild(iframe);
+          document.getElementById("screen-label").textContent = data.label || data.file;
+        }
+      } catch {}
+    };
+  </script>
+</body>
+</html>

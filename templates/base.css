@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ux-bg: #0f0f0f;
+  --ux-surface: #1a1a1a;
+  --ux-border: #2a2a2a;
+  --ux-text: #e5e5e5;
+  --ux-text-muted: #888;
+  --ux-accent: #3b82f6;
+  --ux-success: #22c55e;
+  --ux-danger: #ef4444;
+  --ux-toolbar-h: 48px;
+  --ux-font: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--ux-font);
+  background: var(--ux-bg);
+  color: var(--ux-text);
+  line-height: 1.6;
+  min-height: 100dvh;
+}
