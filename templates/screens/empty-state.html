@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CUSTOMIZE: page title -->
+  <title>Empty State</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --border: #2a2a2a;
+      --radius: 12px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .empty-state {
+      text-align: center;
+      max-width: 420px;
+    }
+
+    /* ILLUSTRATION PLACEHOLDER */
+    /* CUSTOMIZE: illustration (SVG or image) -->  */
+    .illustration {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 2rem;
+      background: var(--bg-card);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 3rem;
+    }
+
+    /* CUSTOMIZE: empty state headline -->  */
+    .empty-state h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    /* CUSTOMIZE: empty state message -->  */
+    .empty-state p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* CUSTOMIZE: CTA button -->  */
+    .cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--accent-hover); }
+
+    /* SECONDARY LINK */
+    .secondary-link {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .secondary-link a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .secondary-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="empty-state">
+    <!-- CUSTOMIZE: illustration -->
+    <div class="illustration">&#128193;</div>
+
+    <!-- CUSTOMIZE: headline -->
+    <h2>No projects yet</h2>
+
+    <!-- CUSTOMIZE: description -->
+    <p>Create your first project to get started. It only takes a minute to set things up.</p>
+
+    <!-- CUSTOMIZE: primary action -->
+    <a href="#" class="cta-btn">Create Project</a>
+
+    <!-- CUSTOMIZE: secondary link -->
+    <p class="secondary-link">or <a href="#">browse templates</a></p>
+  </div>
+</body>
+</html>

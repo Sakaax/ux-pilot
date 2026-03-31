@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CUSTOMIZE: page title -->
+  <title>Pricing</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --highlight: #312e81;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+    }
+    .container { max-width: 1040px; margin: 0 auto; }
+
+    /* HEADER */
+    .header { text-align: center; margin-bottom: 2.5rem; }
+    .header h1 { font-size: 2.25rem; margin-bottom: 0.5rem; }
+    .header p { color: var(--text-muted); }
+
+    /* TOGGLE */
+    .billing-toggle {
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+    .billing-toggle span { font-size: 0.9rem; color: var(--text-muted); }
+    .billing-toggle span.active { color: var(--text); font-weight: 600; }
+    /* CUSTOMIZE: toggle colors -->  */
+    .pill {
+      width: 48px; height: 26px; background: var(--accent); border-radius: 13px;
+      position: relative; cursor: pointer;
+    }
+    .pill::after {
+      content: ''; position: absolute; top: 3px; left: 3px;
+      width: 20px; height: 20px; background: #fff; border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .pill.yearly::after { transform: translateX(22px); }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    /* CUSTOMIZE: recommended card highlight -->  */
+    .card.featured {
+      border-color: var(--accent);
+      background: var(--highlight);
+      position: relative;
+    }
+    .badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: #fff; padding: 0.25rem 1rem;
+      border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+    }
+    /* CUSTOMIZE: plan name -->  */
+    .card h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
+    .card .tagline { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    /* CUSTOMIZE: price -->  */
+    .price { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+    /* CUSTOMIZE: feature list -->  */
+    .features { list-style: none; margin: 1.5rem 0 2rem; }
+    .features li { padding: 0.375rem 0; font-size: 0.9rem; color: var(--text-muted); }
+    .features li::before { content: '✓ '; color: var(--accent); }
+    .card .btn {
+      display: block; text-align: center; padding: 0.75rem;
+      border-radius: var(--radius); font-weight: 600; text-decoration: none;
+      font-size: 0.95rem; transition: background 0.2s;
+    }
+    .card .btn-outline {
+      border: 1px solid var(--border); color: var(--text); background: transparent;
+    }
+    .card .btn-outline:hover { border-color: var(--accent); }
+    .card .btn-filled { background: var(--accent); color: #fff; border: none; }
+    .card .btn-filled:hover { background: var(--accent-hover); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- CUSTOMIZE: pricing header -->
+    <div class="header">
+      <h1>Simple, transparent pricing</h1>
+      <p>No hidden fees. Cancel anytime.</p>
+    </div>
+
+    <!-- CUSTOMIZE: billing toggle -->
+    <div class="billing-toggle">
+      <span class="active">Monthly</span>
+      <div class="pill" role="switch" aria-checked="false"></div>
+      <span>Yearly <small style="color:#22c55e">Save 20%</small></span>
+    </div>
+
+    <!-- CUSTOMIZE: pricing cards -->
+    <div class="cards">
+      <div class="card">
+        <h3>Starter</h3>
+        <p class="tagline">For individuals getting started</p>
+        <div class="price">$0<span>/mo</span></div>
+        <ul class="features">
+          <li>1 project</li>
+          <li>Basic analytics</li>
+          <li>Community support</li>
+        </ul>
+        <a href="#" class="btn btn-outline">Get Started</a>
+      </div>
+
+      <div class="card featured">
+        <div class="badge">Recommended</div>
+        <h3>Pro</h3>
+        <p class="tagline">For growing teams</p>
+        <div class="price">$29<span>/mo</span></div>
+        <ul class="features">
+          <li>Unlimited projects</li>
+          <li>Advanced analytics</li>
+          <li>Priority support</li>
+          <li>Custom integrations</li>
+        </ul>
+        <a href="#" class="btn btn-filled">Get Started</a>
+      </div>
+
+      <div class="card">
+        <h3>Enterprise</h3>
+        <p class="tagline">For large organizations</p>
+        <div class="price">$99<span>/mo</span></div>
+        <ul class="features">
+          <li>Everything in Pro</li>
+          <li>SSO &amp; SAML</li>
+          <li>Dedicated support</li>
+          <li>SLA guarantee</li>
+          <li>Custom contracts</li>
+        </ul>
+        <a href="#" class="btn btn-outline">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

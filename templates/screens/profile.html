@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CUSTOMIZE: page title -->
+  <title>Profile</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --border: #2a2a2a;
+      --radius: 12px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 560px;
+      overflow: hidden;
+    }
+
+    /* COVER */
+    /* CUSTOMIZE: cover gradient -->  */
+    .cover {
+      height: 120px;
+      background: linear-gradient(135deg, #312e81, #6366f1);
+    }
+
+    .profile-body { padding: 0 2rem 2rem; position: relative; }
+
+    /* AVATAR */
+    /* CUSTOMIZE: avatar placeholder -->  */
+    .avatar {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background: #252525;
+      border: 4px solid var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-top: -44px;
+      margin-bottom: 1rem;
+    }
+
+    /* INFO */
+    /* CUSTOMIZE: user name -->  */
+    .name { font-size: 1.5rem; font-weight: 700; }
+    /* CUSTOMIZE: user handle -->  */
+    .handle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    /* CUSTOMIZE: user bio -->  */
+    .bio { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; max-width: 420px; }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat { text-align: center; }
+    /* CUSTOMIZE: stat values -->  */
+    .stat .num { font-size: 1.25rem; font-weight: 700; }
+    .stat .label { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* EDIT BUTTON */
+    .btn-edit {
+      display: inline-block;
+      padding: 0.625rem 1.5rem;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .btn-edit:hover { border-color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      body { padding: 1rem; }
+      .profile-body { padding: 0 1.25rem 1.5rem; }
+      .stats { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="cover"></div>
+    <div class="profile-body">
+      <!-- CUSTOMIZE: avatar -->
+      <div class="avatar">JD</div>
+
+      <!-- CUSTOMIZE: user info -->
+      <div class="name">Jane Doe</div>
+      <div class="handle">@janedoe</div>
+      <p class="bio">Full-stack developer passionate about design systems, open source, and shipping great products.</p>
+
+      <!-- CUSTOMIZE: stats row -->
+      <div class="stats">
+        <div class="stat">
+          <div class="num">142</div>
+          <div class="label">Projects</div>
+        </div>
+        <div class="stat">
+          <div class="num">2.4k</div>
+          <div class="label">Followers</div>
+        </div>
+        <div class="stat">
+          <div class="num">891</div>
+          <div class="label">Following</div>
+        </div>
+      </div>
+
+      <!-- CUSTOMIZE: action button -->
+      <button class="btn-edit">Edit Profile</button>
+    </div>
+  </div>
+</body>
+</html>

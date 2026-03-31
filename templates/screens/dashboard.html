@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CUSTOMIZE: page title -->
+  <title>Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-sidebar: #141414;
+      --bg-card: #1a1a1a;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --border: #2a2a2a;
+      --radius: 12px;
+      --gap: 1.5rem;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .layout { display: flex; min-height: 100vh; }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 240px;
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    /* CUSTOMIZE: sidebar brand -->  */
+    .sidebar .brand { font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; padding: 0 0.5rem; }
+    /* CUSTOMIZE: nav items -->  */
+    .nav-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.625rem 0.75rem; border-radius: 8px;
+      color: var(--text-muted); font-size: 0.9rem; text-decoration: none;
+      margin-bottom: 0.25rem; transition: background 0.15s, color 0.15s;
+    }
+    .nav-item:hover { background: #1f1f1f; color: var(--text); }
+    .nav-item.active { background: var(--accent); color: #fff; }
+
+    /* MAIN */
+    .main { flex: 1; padding: 2rem; overflow-x: auto; }
+    .main h1 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+
+    /* STAT CARDS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--gap);
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    /* CUSTOMIZE: stat label -->  */
+    .stat-card .label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+    /* CUSTOMIZE: stat value -->  */
+    .stat-card .value { font-size: 2rem; font-weight: 700; }
+    .stat-card .change { font-size: 0.8rem; color: #22c55e; margin-top: 0.25rem; }
+
+    /* CHART PLACEHOLDER */
+    .chart-area {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .main { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- CUSTOMIZE: sidebar navigation -->
+    <aside class="sidebar">
+      <div class="brand">Acme</div>
+      <a href="#" class="nav-item active">Dashboard</a>
+      <a href="#" class="nav-item">Analytics</a>
+      <a href="#" class="nav-item">Projects</a>
+      <a href="#" class="nav-item">Team</a>
+      <a href="#" class="nav-item">Settings</a>
+    </aside>
+
+    <main class="main">
+      <!-- CUSTOMIZE: page heading -->
+      <h1>Dashboard</h1>
+
+      <!-- CUSTOMIZE: stat cards (4) -->
+      <section class="stats">
+        <div class="stat-card">
+          <div class="label">Total Users</div>
+          <div class="value">12,847</div>
+          <div class="change">+12% this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Revenue</div>
+          <div class="value">$48.2k</div>
+          <div class="change">+8% this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Active Projects</div>
+          <div class="value">34</div>
+          <div class="change">+3 new</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Uptime</div>
+          <div class="value">99.9%</div>
+          <div class="change">Healthy</div>
+        </div>
+      </section>
+
+      <!-- CUSTOMIZE: chart placeholder -->
+      <div class="chart-area">Chart placeholder — replace with your charting library</div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CUSTOMIZE: page title -->
+  <title>Settings</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --bg-input: #252525;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --border: #2a2a2a;
+      --radius: 12px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 1.75rem; margin-bottom: 2rem; }
+
+    /* SECTIONS */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    /* CUSTOMIZE: section title -->  */
+    .section h2 { font-size: 1.125rem; margin-bottom: 1.5rem; }
+    .field { margin-bottom: 1.25rem; }
+    .field:last-child { margin-bottom: 0; }
+    .field label { display: block; font-size: 0.875rem; margin-bottom: 0.375rem; }
+    .field input {
+      width: 100%; padding: 0.75rem 1rem; background: var(--bg-input);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      color: var(--text); font-size: 0.95rem; outline: none; transition: border-color 0.2s;
+    }
+    .field input:focus { border-color: var(--accent); }
+
+    /* TOGGLE ROW */
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .toggle-row:last-child { border-bottom: none; }
+    .toggle-info .toggle-label { font-size: 0.95rem; }
+    .toggle-info .toggle-desc { font-size: 0.8rem; color: var(--text-muted); }
+    /* CUSTOMIZE: toggle switch colors -->  */
+    .toggle {
+      position: relative; width: 44px; height: 24px;
+      background: #333; border-radius: 12px; cursor: pointer; transition: background 0.2s;
+    }
+    .toggle.on { background: var(--accent); }
+    .toggle::after {
+      content: ''; position: absolute; top: 2px; left: 2px;
+      width: 20px; height: 20px; background: #fff; border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    .toggle.on::after { transform: translateX(20px); }
+
+    /* SAVE BUTTON */
+    .save-bar { text-align: right; margin-top: 1rem; }
+    .btn-save {
+      padding: 0.75rem 2rem; background: var(--accent); color: #fff;
+      border: none; border-radius: var(--radius); font-weight: 600;
+      font-size: 0.95rem; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-save:hover { background: var(--accent-hover); }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .section { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- CUSTOMIZE: page heading -->
+    <h1>Settings</h1>
+
+    <!-- CUSTOMIZE: profile section -->
+    <div class="section">
+      <h2>Profile</h2>
+      <div class="field">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" placeholder="Jane Doe">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="jane@example.com">
+      </div>
+    </div>
+
+    <!-- CUSTOMIZE: notification toggles -->
+    <div class="section">
+      <h2>Notifications</h2>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Email notifications</div>
+          <div class="toggle-desc">Receive updates about your projects</div>
+        </div>
+        <div class="toggle on" role="switch" aria-checked="true"></div>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Push notifications</div>
+          <div class="toggle-desc">Get notified on your device</div>
+        </div>
+        <div class="toggle" role="switch" aria-checked="false"></div>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Weekly digest</div>
+          <div class="toggle-desc">Summary of activity each week</div>
+        </div>
+        <div class="toggle on" role="switch" aria-checked="true"></div>
+      </div>
+    </div>
+
+    <!-- CUSTOMIZE: security section -->
+    <div class="section">
+      <h2>Security</h2>
+      <div class="field">
+        <label for="current-pw">Current Password</label>
+        <input type="password" id="current-pw" placeholder="Enter current password">
+      </div>
+      <div class="field">
+        <label for="new-pw">New Password</label>
+        <input type="password" id="new-pw" placeholder="Enter new password">
+      </div>
+    </div>
+
+    <div class="save-bar">
+      <button class="btn-save">Save Changes</button>
+    </div>
+  </div>
+</body>
+</html>

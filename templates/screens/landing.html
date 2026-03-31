@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CUSTOMIZE: page title -->
+  <title>Landing Page</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --text: #e5e5e5;
+      --text-muted: #888;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --radius: 12px;
+      --gap: 1.5rem;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 var(--gap); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 6rem 0 4rem;
+    }
+    /* CUSTOMIZE: hero headline -->  */
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    /* CUSTOMIZE: hero subtitle -->  */
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    }
+    .hero .cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .hero .cta-btn:hover { background: var(--accent-hover); }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--gap);
+      padding-bottom: 5rem;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid #2a2a2a;
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    /* CUSTOMIZE: feature icon (emoji or SVG) -->  */
+    .feature-card .icon { font-size: 2rem; margin-bottom: 1rem; }
+    /* CUSTOMIZE: feature title -->  */
+    .feature-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    /* CUSTOMIZE: feature description -->  */
+    .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      text-align: center;
+      padding: 3rem 0 5rem;
+      border-top: 1px solid #1f1f1f;
+    }
+    .bottom-cta h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+    .bottom-cta .cta-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .bottom-cta .cta-btn:hover { background: var(--accent-hover); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- CUSTOMIZE: hero section -->
+    <section class="hero">
+      <h1>Build something amazing</h1>
+      <p>A modern platform that helps you ship faster with confidence and clarity.</p>
+      <a href="#" class="cta-btn">Get Started</a>
+    </section>
+
+    <!-- CUSTOMIZE: feature cards (3) -->
+    <section class="features">
+      <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Optimized performance that keeps your users engaged and your metrics green.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>Secure by Default</h3>
+        <p>Enterprise-grade security built into every layer of the stack.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎯</div>
+        <h3>Developer Friendly</h3>
+        <p>Clean APIs and comprehensive docs so you can integrate in minutes.</p>
+      </div>
+    </section>
+
+    <!-- CUSTOMIZE: bottom CTA section -->
+    <section class="bottom-cta">
+      <h2>Ready to get started?</h2>
+      <a href="#" class="cta-btn">Start Free Trial</a>
+    </section>
+  </div>
+</body>
+</html>
