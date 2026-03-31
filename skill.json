@@ -1,0 +1,12 @@
+{
+  "name": "ux-pilot",
+  "displayName": "UX Pilot",
+  "description": "Your UX co-pilot — conversational UX designer with live preview. 376 rules, 161 palettes, 57 font pairings, 67 UI styles.",
+  "version": "0.1.0",
+  "author": "Sakaax",
+  "license": "MIT",
+  "homepage": "https://github.com/Sakaax/ux-pilot",
+  "repository": "https://github.com/Sakaax/ux-pilot",
+  "keywords": ["ux", "ui", "design", "preview", "audit", "seo", "conversion", "claude-code", "claude-code-plugin"],
+  "platforms": ["claude-code"]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ux-pilot",
+  "id": "ux-pilot",
+  "owner": {
+    "name": "Sakaax"
+  },
+  "metadata": {
+    "description": "Conversational UX designer with live preview — 376 rules, 4 phases, anti AI-slop",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "ux-pilot",
+      "source": "./",
+      "description": "Your UX co-pilot — from idea to validated flow, in your terminal. Conversational Discovery, UX Audit, Live Preview with named versions, Export to spec + framework components. 376 UX/SEO/conversion/psychology rules loaded on-demand.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Sakaax"
+      },
+      "keywords": ["ux", "ui", "design", "preview", "audit", "seo", "conversion", "accessibility"],
+      "category": "design",
+      "strict": false
+    }
+  ]
+}
