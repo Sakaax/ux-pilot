@@ -1,0 +1,1290 @@
+[
+  {
+    "type": "saas",
+    "primary": "#2563EB",
+    "accent": "#EA580C",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "micro_saas",
+    "primary": "#7C3AED",
+    "accent": "#F59E0B",
+    "background": "#FAFAF9",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "b2b_service",
+    "primary": "#1D4ED8",
+    "accent": "#059669",
+    "background": "#F1F5F9",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "developer_tool",
+    "primary": "#6366F1",
+    "accent": "#22D3EE",
+    "background": "#0F172A",
+    "surface": "#1E293B",
+    "text": "#E2E8F0"
+  },
+  {
+    "type": "ai_chatbot",
+    "primary": "#8B5CF6",
+    "accent": "#06B6D4",
+    "background": "#0C0A1D",
+    "surface": "#1A1533",
+    "text": "#E8E0F0"
+  },
+  {
+    "type": "cybersecurity",
+    "primary": "#10B981",
+    "accent": "#EF4444",
+    "background": "#0A0F0D",
+    "surface": "#111A16",
+    "text": "#D1FAE5"
+  },
+  {
+    "type": "fintech",
+    "primary": "#0D9488",
+    "accent": "#6366F1",
+    "background": "#F0FDFA",
+    "surface": "#FFFFFF",
+    "text": "#042F2E"
+  },
+  {
+    "type": "crypto",
+    "primary": "#F59E0B",
+    "accent": "#8B5CF6",
+    "background": "#0C0A09",
+    "surface": "#1C1917",
+    "text": "#FEF3C7"
+  },
+  {
+    "type": "banking",
+    "primary": "#1E3A5F",
+    "accent": "#D4AF37",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "insurance",
+    "primary": "#1E40AF",
+    "accent": "#16A34A",
+    "background": "#F0F4FF",
+    "surface": "#FFFFFF",
+    "text": "#1E293B"
+  },
+  {
+    "type": "personal_finance",
+    "primary": "#059669",
+    "accent": "#F97316",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#052E16"
+  },
+  {
+    "type": "invoice_billing",
+    "primary": "#2563EB",
+    "accent": "#16A34A",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#1E293B"
+  },
+  {
+    "type": "medical_clinic",
+    "primary": "#0891B2",
+    "accent": "#DC2626",
+    "background": "#F0FDFA",
+    "surface": "#FFFFFF",
+    "text": "#164E63"
+  },
+  {
+    "type": "pharmacy",
+    "primary": "#16A34A",
+    "accent": "#2563EB",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#14532D"
+  },
+  {
+    "type": "dental",
+    "primary": "#06B6D4",
+    "accent": "#F0ABFC",
+    "background": "#ECFEFF",
+    "surface": "#FFFFFF",
+    "text": "#155E75"
+  },
+  {
+    "type": "veterinary",
+    "primary": "#65A30D",
+    "accent": "#EA580C",
+    "background": "#FEFCE8",
+    "surface": "#FFFFFF",
+    "text": "#365314"
+  },
+  {
+    "type": "mental_health",
+    "primary": "#A78BFA",
+    "accent": "#34D399",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "pet_tech",
+    "primary": "#F97316",
+    "accent": "#8B5CF6",
+    "background": "#FFF7ED",
+    "surface": "#FFFFFF",
+    "text": "#431407"
+  },
+  {
+    "type": "ecommerce",
+    "primary": "#E11D48",
+    "accent": "#2563EB",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#0F172A"
+  },
+  {
+    "type": "luxury_ecommerce",
+    "primary": "#1C1917",
+    "accent": "#D4AF37",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "marketplace_p2p",
+    "primary": "#7C3AED",
+    "accent": "#F59E0B",
+    "background": "#FFFFFF",
+    "surface": "#F5F3FF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "subscription_box",
+    "primary": "#DB2777",
+    "accent": "#6366F1",
+    "background": "#FDF2F8",
+    "surface": "#FFFFFF",
+    "text": "#500724"
+  },
+  {
+    "type": "food_delivery",
+    "primary": "#DC2626",
+    "accent": "#F59E0B",
+    "background": "#FFFFFF",
+    "surface": "#FEF2F2",
+    "text": "#1C1917"
+  },
+  {
+    "type": "grocery",
+    "primary": "#16A34A",
+    "accent": "#EA580C",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#14532D"
+  },
+  {
+    "type": "beauty_spa",
+    "primary": "#EC4899",
+    "accent": "#D4AF37",
+    "background": "#FDF2F8",
+    "surface": "#FFFFFF",
+    "text": "#4A0527"
+  },
+  {
+    "type": "salon",
+    "primary": "#A855F7",
+    "accent": "#EC4899",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "restaurant",
+    "primary": "#B91C1C",
+    "accent": "#D4AF37",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "cafe",
+    "primary": "#92400E",
+    "accent": "#D97706",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#451A03"
+  },
+  {
+    "type": "bakery",
+    "primary": "#D97706",
+    "accent": "#DB2777",
+    "background": "#FEF3C7",
+    "surface": "#FFFFFF",
+    "text": "#451A03"
+  },
+  {
+    "type": "hotel",
+    "primary": "#1E3A5F",
+    "accent": "#D4AF37",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text": "#0C1524"
+  },
+  {
+    "type": "hostel",
+    "primary": "#F97316",
+    "accent": "#2563EB",
+    "background": "#FFF7ED",
+    "surface": "#FFFFFF",
+    "text": "#431407"
+  },
+  {
+    "type": "vacation_rental",
+    "primary": "#0EA5E9",
+    "accent": "#F97316",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E"
+  },
+  {
+    "type": "legal",
+    "primary": "#1E293B",
+    "accent": "#991B1B",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "accounting",
+    "primary": "#0F766E",
+    "accent": "#1D4ED8",
+    "background": "#F0FDFA",
+    "surface": "#FFFFFF",
+    "text": "#134E4A"
+  },
+  {
+    "type": "home_services",
+    "primary": "#EA580C",
+    "accent": "#2563EB",
+    "background": "#FFFFFF",
+    "surface": "#FFF7ED",
+    "text": "#1C1917"
+  },
+  {
+    "type": "cleaning",
+    "primary": "#0EA5E9",
+    "accent": "#22C55E",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E"
+  },
+  {
+    "type": "plumber",
+    "primary": "#1D4ED8",
+    "accent": "#F97316",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "electrician",
+    "primary": "#F59E0B",
+    "accent": "#1D4ED8",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#451A03"
+  },
+  {
+    "type": "booking_appointment",
+    "primary": "#6366F1",
+    "accent": "#06B6D4",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "portfolio_creative",
+    "primary": "#0F172A",
+    "accent": "#F97316",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#0F172A"
+  },
+  {
+    "type": "agency_digital",
+    "primary": "#7C3AED",
+    "accent": "#F43F5E",
+    "background": "#0F0720",
+    "surface": "#1A1035",
+    "text": "#E8E0F0"
+  },
+  {
+    "type": "agency_marketing",
+    "primary": "#F43F5E",
+    "accent": "#6366F1",
+    "background": "#FFFFFF",
+    "surface": "#FFF1F2",
+    "text": "#1C1917"
+  },
+  {
+    "type": "photography",
+    "primary": "#1C1917",
+    "accent": "#FBBF24",
+    "background": "#FAFAF9",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "videography",
+    "primary": "#1C1917",
+    "accent": "#EF4444",
+    "background": "#171717",
+    "surface": "#262626",
+    "text": "#FAFAFA"
+  },
+  {
+    "type": "gaming",
+    "primary": "#7C3AED",
+    "accent": "#22D3EE",
+    "background": "#09090B",
+    "surface": "#18181B",
+    "text": "#FAFAFA"
+  },
+  {
+    "type": "esports",
+    "primary": "#EF4444",
+    "accent": "#22D3EE",
+    "background": "#0A0A0A",
+    "surface": "#171717",
+    "text": "#F5F5F5"
+  },
+  {
+    "type": "music_streaming",
+    "primary": "#1DB954",
+    "accent": "#FBBF24",
+    "background": "#0A0A0A",
+    "surface": "#1A1A1A",
+    "text": "#F5F5F5"
+  },
+  {
+    "type": "podcast",
+    "primary": "#8B5CF6",
+    "accent": "#F97316",
+    "background": "#FAFAF9",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "video_editor",
+    "primary": "#6366F1",
+    "accent": "#F43F5E",
+    "background": "#0F0B1A",
+    "surface": "#1A1528",
+    "text": "#E2E0F0"
+  },
+  {
+    "type": "social_media",
+    "primary": "#3B82F6",
+    "accent": "#EC4899",
+    "background": "#FFFFFF",
+    "surface": "#F0F9FF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "dating",
+    "primary": "#E11D48",
+    "accent": "#F472B6",
+    "background": "#FFF1F2",
+    "surface": "#FFFFFF",
+    "text": "#4C0519"
+  },
+  {
+    "type": "community_forum",
+    "primary": "#6366F1",
+    "accent": "#F59E0B",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "habit_tracker",
+    "primary": "#10B981",
+    "accent": "#F59E0B",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#052E16"
+  },
+  {
+    "type": "recipe",
+    "primary": "#DC2626",
+    "accent": "#65A30D",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "meditation",
+    "primary": "#6D28D9",
+    "accent": "#34D399",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#2E1065"
+  },
+  {
+    "type": "weather",
+    "primary": "#0EA5E9",
+    "accent": "#FBBF24",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E"
+  },
+  {
+    "type": "diary",
+    "primary": "#A78BFA",
+    "accent": "#FB923C",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "mood_tracker",
+    "primary": "#8B5CF6",
+    "accent": "#FBBF24",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "sleep_tracker",
+    "primary": "#312E81",
+    "accent": "#818CF8",
+    "background": "#0F0D2E",
+    "surface": "#1E1B4B",
+    "text": "#C7D2FE"
+  },
+  {
+    "type": "fitness",
+    "primary": "#DC2626",
+    "accent": "#1D4ED8",
+    "background": "#FFFFFF",
+    "surface": "#FEF2F2",
+    "text": "#1C1917"
+  },
+  {
+    "type": "yoga",
+    "primary": "#A78BFA",
+    "accent": "#34D399",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#2E1065"
+  },
+  {
+    "type": "nutrition",
+    "primary": "#16A34A",
+    "accent": "#F59E0B",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#14532D"
+  },
+  {
+    "type": "running",
+    "primary": "#EF4444",
+    "accent": "#06B6D4",
+    "background": "#FFFFFF",
+    "surface": "#FEF2F2",
+    "text": "#1C1917"
+  },
+  {
+    "type": "gym",
+    "primary": "#1C1917",
+    "accent": "#EF4444",
+    "background": "#171717",
+    "surface": "#262626",
+    "text": "#F5F5F5"
+  },
+  {
+    "type": "education",
+    "primary": "#2563EB",
+    "accent": "#F59E0B",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "online_course",
+    "primary": "#6366F1",
+    "accent": "#F97316",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "language_learning",
+    "primary": "#0EA5E9",
+    "accent": "#22C55E",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E"
+  },
+  {
+    "type": "tutoring",
+    "primary": "#7C3AED",
+    "accent": "#FBBF24",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "kids_education",
+    "primary": "#F97316",
+    "accent": "#06B6D4",
+    "background": "#FFF7ED",
+    "surface": "#FFFFFF",
+    "text": "#431407"
+  },
+  {
+    "type": "university",
+    "primary": "#1E3A5F",
+    "accent": "#B91C1C",
+    "background": "#F1F5F9",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "library",
+    "primary": "#92400E",
+    "accent": "#1D4ED8",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#451A03"
+  },
+  {
+    "type": "job_board",
+    "primary": "#2563EB",
+    "accent": "#16A34A",
+    "background": "#FFFFFF",
+    "surface": "#EFF6FF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "freelance",
+    "primary": "#6366F1",
+    "accent": "#10B981",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "hr_recruitment",
+    "primary": "#0891B2",
+    "accent": "#F43F5E",
+    "background": "#ECFEFF",
+    "surface": "#FFFFFF",
+    "text": "#155E75"
+  },
+  {
+    "type": "project_management",
+    "primary": "#6366F1",
+    "accent": "#F59E0B",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "crm",
+    "primary": "#2563EB",
+    "accent": "#10B981",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "erp",
+    "primary": "#1E40AF",
+    "accent": "#059669",
+    "background": "#F1F5F9",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "analytics",
+    "primary": "#6366F1",
+    "accent": "#22D3EE",
+    "background": "#0F0B1A",
+    "surface": "#1A1528",
+    "text": "#E2E0F0"
+  },
+  {
+    "type": "reporting",
+    "primary": "#0891B2",
+    "accent": "#F59E0B",
+    "background": "#ECFEFF",
+    "surface": "#FFFFFF",
+    "text": "#155E75"
+  },
+  {
+    "type": "data_visualization",
+    "primary": "#6366F1",
+    "accent": "#10B981",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "email_marketing",
+    "primary": "#7C3AED",
+    "accent": "#F43F5E",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "seo_tool",
+    "primary": "#16A34A",
+    "accent": "#2563EB",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#14532D"
+  },
+  {
+    "type": "content_management",
+    "primary": "#6366F1",
+    "accent": "#F97316",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "blog",
+    "primary": "#1C1917",
+    "accent": "#E11D48",
+    "background": "#FAFAF9",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "news_media",
+    "primary": "#DC2626",
+    "accent": "#1D4ED8",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#0F172A"
+  },
+  {
+    "type": "newsletter",
+    "primary": "#2563EB",
+    "accent": "#F97316",
+    "background": "#FFFFFF",
+    "surface": "#EFF6FF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "magazine",
+    "primary": "#0F172A",
+    "accent": "#E11D48",
+    "background": "#FFFFFF",
+    "surface": "#F1F5F9",
+    "text": "#0F172A"
+  },
+  {
+    "type": "wiki",
+    "primary": "#1D4ED8",
+    "accent": "#059669",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text": "#1E293B"
+  },
+  {
+    "type": "documentation",
+    "primary": "#6366F1",
+    "accent": "#22D3EE",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#1E293B"
+  },
+  {
+    "type": "open_source",
+    "primary": "#16A34A",
+    "accent": "#F59E0B",
+    "background": "#FFFFFF",
+    "surface": "#F0FDF4",
+    "text": "#0F172A"
+  },
+  {
+    "type": "startup_landing",
+    "primary": "#7C3AED",
+    "accent": "#F43F5E",
+    "background": "#FFFFFF",
+    "surface": "#F5F3FF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "saas_dashboard",
+    "primary": "#2563EB",
+    "accent": "#F59E0B",
+    "background": "#F1F5F9",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "admin_panel",
+    "primary": "#1E293B",
+    "accent": "#3B82F6",
+    "background": "#F1F5F9",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "file_storage",
+    "primary": "#2563EB",
+    "accent": "#10B981",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "cloud_hosting",
+    "primary": "#0EA5E9",
+    "accent": "#6366F1",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E"
+  },
+  {
+    "type": "vpn",
+    "primary": "#10B981",
+    "accent": "#6366F1",
+    "background": "#0A0F0D",
+    "surface": "#111A16",
+    "text": "#D1FAE5"
+  },
+  {
+    "type": "password_manager",
+    "primary": "#1E40AF",
+    "accent": "#10B981",
+    "background": "#0F172A",
+    "surface": "#1E293B",
+    "text": "#E2E8F0"
+  },
+  {
+    "type": "two_factor_auth",
+    "primary": "#059669",
+    "accent": "#DC2626",
+    "background": "#F0FDFA",
+    "surface": "#FFFFFF",
+    "text": "#042F2E"
+  },
+  {
+    "type": "iot_dashboard",
+    "primary": "#06B6D4",
+    "accent": "#F59E0B",
+    "background": "#0E1117",
+    "surface": "#161B22",
+    "text": "#C9D1D9"
+  },
+  {
+    "type": "smart_home",
+    "primary": "#0EA5E9",
+    "accent": "#F59E0B",
+    "background": "#0F172A",
+    "surface": "#1E293B",
+    "text": "#E2E8F0"
+  },
+  {
+    "type": "robotics",
+    "primary": "#6366F1",
+    "accent": "#22D3EE",
+    "background": "#0F0B1A",
+    "surface": "#1A1528",
+    "text": "#C7D2FE"
+  },
+  {
+    "type": "drone",
+    "primary": "#1D4ED8",
+    "accent": "#F97316",
+    "background": "#0F172A",
+    "surface": "#1E293B",
+    "text": "#BFDBFE"
+  },
+  {
+    "type": "autonomous_vehicle",
+    "primary": "#0EA5E9",
+    "accent": "#10B981",
+    "background": "#0C1220",
+    "surface": "#172033",
+    "text": "#BAE6FD"
+  },
+  {
+    "type": "ar_vr",
+    "primary": "#A855F7",
+    "accent": "#06B6D4",
+    "background": "#0C0A1D",
+    "surface": "#1A1533",
+    "text": "#DDD6FE"
+  },
+  {
+    "type": "spatial_computing",
+    "primary": "#818CF8",
+    "accent": "#34D399",
+    "background": "#0F0D2E",
+    "surface": "#1E1B4B",
+    "text": "#C7D2FE"
+  },
+  {
+    "type": "web3_nft",
+    "primary": "#A855F7",
+    "accent": "#F59E0B",
+    "background": "#0A0A0A",
+    "surface": "#1A1A2E",
+    "text": "#E8E0F0"
+  },
+  {
+    "type": "defi",
+    "primary": "#06B6D4",
+    "accent": "#A855F7",
+    "background": "#0A0F14",
+    "surface": "#111920",
+    "text": "#CFFAFE"
+  },
+  {
+    "type": "dao",
+    "primary": "#F59E0B",
+    "accent": "#6366F1",
+    "background": "#0A0A0A",
+    "surface": "#1A1A1A",
+    "text": "#FEF3C7"
+  },
+  {
+    "type": "metaverse",
+    "primary": "#8B5CF6",
+    "accent": "#EC4899",
+    "background": "#0C0A1D",
+    "surface": "#1A1533",
+    "text": "#DDD6FE"
+  },
+  {
+    "type": "quantum_computing",
+    "primary": "#06B6D4",
+    "accent": "#A78BFA",
+    "background": "#0A1014",
+    "surface": "#12191F",
+    "text": "#A5F3FC"
+  },
+  {
+    "type": "biotech",
+    "primary": "#059669",
+    "accent": "#6366F1",
+    "background": "#F0FDFA",
+    "surface": "#FFFFFF",
+    "text": "#042F2E"
+  },
+  {
+    "type": "cleantech",
+    "primary": "#16A34A",
+    "accent": "#0EA5E9",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#14532D"
+  },
+  {
+    "type": "energy",
+    "primary": "#F59E0B",
+    "accent": "#1D4ED8",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#451A03"
+  },
+  {
+    "type": "solar",
+    "primary": "#F59E0B",
+    "accent": "#16A34A",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#451A03"
+  },
+  {
+    "type": "agriculture",
+    "primary": "#4D7C0F",
+    "accent": "#92400E",
+    "background": "#F7FEE7",
+    "surface": "#FFFFFF",
+    "text": "#1A2E05"
+  },
+  {
+    "type": "fashion",
+    "primary": "#0F172A",
+    "accent": "#E11D48",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "text": "#0F172A"
+  },
+  {
+    "type": "jewelry",
+    "primary": "#78350F",
+    "accent": "#D4AF37",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#451A03"
+  },
+  {
+    "type": "watches",
+    "primary": "#1C1917",
+    "accent": "#D4AF37",
+    "background": "#FAFAF9",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "cosmetics",
+    "primary": "#DB2777",
+    "accent": "#D4AF37",
+    "background": "#FDF2F8",
+    "surface": "#FFFFFF",
+    "text": "#500724"
+  },
+  {
+    "type": "perfume",
+    "primary": "#4C1D95",
+    "accent": "#D4AF37",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#2E1065"
+  },
+  {
+    "type": "furniture",
+    "primary": "#78350F",
+    "accent": "#D97706",
+    "background": "#FEFCE8",
+    "surface": "#FFFFFF",
+    "text": "#422006"
+  },
+  {
+    "type": "interior_design",
+    "primary": "#1C1917",
+    "accent": "#D4AF37",
+    "background": "#FAFAF9",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "architecture",
+    "primary": "#1E293B",
+    "accent": "#F97316",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "real_estate",
+    "primary": "#1E40AF",
+    "accent": "#D4AF37",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "construction",
+    "primary": "#EA580C",
+    "accent": "#1D4ED8",
+    "background": "#FFF7ED",
+    "surface": "#FFFFFF",
+    "text": "#431407"
+  },
+  {
+    "type": "automotive",
+    "primary": "#1C1917",
+    "accent": "#DC2626",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "motorcycle",
+    "primary": "#1C1917",
+    "accent": "#EF4444",
+    "background": "#171717",
+    "surface": "#262626",
+    "text": "#F5F5F5"
+  },
+  {
+    "type": "bicycle",
+    "primary": "#16A34A",
+    "accent": "#F97316",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#14532D"
+  },
+  {
+    "type": "travel",
+    "primary": "#0EA5E9",
+    "accent": "#F97316",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E"
+  },
+  {
+    "type": "airline",
+    "primary": "#1E3A5F",
+    "accent": "#0EA5E9",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C1524"
+  },
+  {
+    "type": "cruise",
+    "primary": "#1E40AF",
+    "accent": "#D4AF37",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "camping",
+    "primary": "#4D7C0F",
+    "accent": "#D97706",
+    "background": "#F7FEE7",
+    "surface": "#FFFFFF",
+    "text": "#1A2E05"
+  },
+  {
+    "type": "event_conference",
+    "primary": "#7C3AED",
+    "accent": "#F43F5E",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "wedding",
+    "primary": "#BE185D",
+    "accent": "#D4AF37",
+    "background": "#FDF2F8",
+    "surface": "#FFFFFF",
+    "text": "#500724"
+  },
+  {
+    "type": "ticketing",
+    "primary": "#6366F1",
+    "accent": "#F43F5E",
+    "background": "#F5F3FF",
+    "surface": "#FFFFFF",
+    "text": "#1E1B4B"
+  },
+  {
+    "type": "charity_nonprofit",
+    "primary": "#059669",
+    "accent": "#F59E0B",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#042F2E"
+  },
+  {
+    "type": "government",
+    "primary": "#1E3A5F",
+    "accent": "#B91C1C",
+    "background": "#F1F5F9",
+    "surface": "#FFFFFF",
+    "text": "#0F172A"
+  },
+  {
+    "type": "political",
+    "primary": "#1E40AF",
+    "accent": "#DC2626",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "religious",
+    "primary": "#78350F",
+    "accent": "#D4AF37",
+    "background": "#FFFBEB",
+    "surface": "#FFFFFF",
+    "text": "#422006"
+  },
+  {
+    "type": "church",
+    "primary": "#4C1D95",
+    "accent": "#D4AF37",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#2E1065"
+  },
+  {
+    "type": "museum",
+    "primary": "#1C1917",
+    "accent": "#B91C1C",
+    "background": "#FAFAF9",
+    "surface": "#FFFFFF",
+    "text": "#1C1917"
+  },
+  {
+    "type": "art_gallery",
+    "primary": "#0F172A",
+    "accent": "#F43F5E",
+    "background": "#FFFFFF",
+    "surface": "#FAFAF9",
+    "text": "#0F172A"
+  },
+  {
+    "type": "theater",
+    "primary": "#7F1D1D",
+    "accent": "#D4AF37",
+    "background": "#1C1917",
+    "surface": "#292524",
+    "text": "#FEF2F2"
+  },
+  {
+    "type": "cinema",
+    "primary": "#1C1917",
+    "accent": "#EF4444",
+    "background": "#0A0A0A",
+    "surface": "#171717",
+    "text": "#F5F5F5"
+  },
+  {
+    "type": "sports",
+    "primary": "#DC2626",
+    "accent": "#1D4ED8",
+    "background": "#FFFFFF",
+    "surface": "#FEF2F2",
+    "text": "#0F172A"
+  },
+  {
+    "type": "football",
+    "primary": "#166534",
+    "accent": "#FBBF24",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#052E16"
+  },
+  {
+    "type": "basketball",
+    "primary": "#EA580C",
+    "accent": "#1C1917",
+    "background": "#FFF7ED",
+    "surface": "#FFFFFF",
+    "text": "#431407"
+  },
+  {
+    "type": "tennis",
+    "primary": "#65A30D",
+    "accent": "#F8FAFC",
+    "background": "#F7FEE7",
+    "surface": "#FFFFFF",
+    "text": "#1A2E05"
+  },
+  {
+    "type": "golf",
+    "primary": "#166534",
+    "accent": "#D4AF37",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#052E16"
+  },
+  {
+    "type": "sailing",
+    "primary": "#1E40AF",
+    "accent": "#F8FAFC",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "skiing",
+    "primary": "#0EA5E9",
+    "accent": "#F8FAFC",
+    "background": "#F0F9FF",
+    "surface": "#FFFFFF",
+    "text": "#0C4A6E"
+  },
+  {
+    "type": "surfing",
+    "primary": "#0891B2",
+    "accent": "#F97316",
+    "background": "#ECFEFF",
+    "surface": "#FFFFFF",
+    "text": "#155E75"
+  },
+  {
+    "type": "fishing",
+    "primary": "#1D4ED8",
+    "accent": "#16A34A",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  },
+  {
+    "type": "hunting",
+    "primary": "#4D7C0F",
+    "accent": "#92400E",
+    "background": "#F7FEE7",
+    "surface": "#FFFFFF",
+    "text": "#1A2E05"
+  },
+  {
+    "type": "gardening",
+    "primary": "#16A34A",
+    "accent": "#D97706",
+    "background": "#F0FDF4",
+    "surface": "#FFFFFF",
+    "text": "#14532D"
+  },
+  {
+    "type": "diy",
+    "primary": "#EA580C",
+    "accent": "#1D4ED8",
+    "background": "#FFF7ED",
+    "surface": "#FFFFFF",
+    "text": "#431407"
+  },
+  {
+    "type": "crafts",
+    "primary": "#DB2777",
+    "accent": "#6366F1",
+    "background": "#FDF2F8",
+    "surface": "#FFFFFF",
+    "text": "#500724"
+  },
+  {
+    "type": "parenting",
+    "primary": "#7C3AED",
+    "accent": "#F97316",
+    "background": "#FAF5FF",
+    "surface": "#FFFFFF",
+    "text": "#3B0764"
+  },
+  {
+    "type": "elderly_care",
+    "primary": "#0891B2",
+    "accent": "#16A34A",
+    "background": "#ECFEFF",
+    "surface": "#FFFFFF",
+    "text": "#155E75"
+  },
+  {
+    "type": "pet_care",
+    "primary": "#F97316",
+    "accent": "#16A34A",
+    "background": "#FFF7ED",
+    "surface": "#FFFFFF",
+    "text": "#431407"
+  },
+  {
+    "type": "logistics",
+    "primary": "#1D4ED8",
+    "accent": "#F59E0B",
+    "background": "#EFF6FF",
+    "surface": "#FFFFFF",
+    "text": "#1E3A5F"
+  }
+]

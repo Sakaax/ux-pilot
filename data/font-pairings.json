@@ -1,0 +1,401 @@
+[
+  {
+    "name": "Classic Elegant",
+    "heading": "Playfair Display",
+    "body": "Inter",
+    "mood": ["luxury", "fashion", "editorial"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Modern Corporate",
+    "heading": "Montserrat",
+    "body": "Open Sans",
+    "mood": ["corporate", "professional", "clean"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Tech Forward",
+    "heading": "Space Grotesk",
+    "body": "IBM Plex Sans",
+    "mood": ["tech", "startup", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Developer Stack",
+    "heading": "JetBrains Mono",
+    "body": "Inter",
+    "mood": ["developer", "tech", "minimal"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Creative Studio",
+    "heading": "Sora",
+    "body": "DM Sans",
+    "mood": ["creative", "design", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Minimal Swiss",
+    "heading": "Hanken Grotesk",
+    "body": "Source Sans 3",
+    "mood": ["minimal", "clean", "professional"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Bold Statement",
+    "heading": "Archivo Black",
+    "body": "Work Sans",
+    "mood": ["bold", "creative", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Playful Pop",
+    "heading": "Baloo 2",
+    "body": "Nunito",
+    "mood": ["playful", "fun", "friendly"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Nunito:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Warm Humanist",
+    "heading": "Merriweather",
+    "body": "Lato",
+    "mood": ["warm", "friendly", "editorial"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;500;700&display=swap"
+  },
+  {
+    "name": "Premium Sans",
+    "heading": "Outfit",
+    "body": "Plus Jakarta Sans",
+    "mood": ["premium", "modern", "startup"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Geometric Precision",
+    "heading": "Poppins",
+    "body": "Karla",
+    "mood": ["geometric", "clean", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Karla:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Organic Warmth",
+    "heading": "Fraunces",
+    "body": "Commissioner",
+    "mood": ["organic", "warm", "natural"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Commissioner:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Wellness Calm",
+    "heading": "Cormorant Garamond",
+    "body": "Quicksand",
+    "mood": ["wellness", "health", "natural"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Quicksand:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Retro Vibes",
+    "heading": "Righteous",
+    "body": "Rubik",
+    "mood": ["retro", "fun", "creative"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Vintage Press",
+    "heading": "Libre Baskerville",
+    "body": "Source Serif 4",
+    "mood": ["vintage", "editorial", "elegant"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Serif+4:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Futuristic Glow",
+    "heading": "Orbitron",
+    "body": "Exo 2",
+    "mood": ["futuristic", "tech", "gaming"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Exo+2:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Brutalist Raw",
+    "heading": "Anton",
+    "body": "Roboto Mono",
+    "mood": ["brutalist", "bold", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Academic Scholar",
+    "heading": "Crimson Text",
+    "body": "Noto Sans",
+    "mood": ["academic", "professional", "editorial"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Noto+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Legal Authority",
+    "heading": "EB Garamond",
+    "body": "Atkinson Hyperlegible",
+    "mood": ["legal", "professional", "corporate"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+  },
+  {
+    "name": "Finance Trust",
+    "heading": "Libre Franklin",
+    "body": "PT Serif",
+    "mood": ["finance", "corporate", "professional"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700&family=PT+Serif:wght@400;700&display=swap"
+  },
+  {
+    "name": "Food & Flavor",
+    "heading": "Lobster Two",
+    "body": "Cabin",
+    "mood": ["food", "warm", "friendly"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Cabin:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Travel Explorer",
+    "heading": "Josefin Sans",
+    "body": "Mulish",
+    "mood": ["travel", "modern", "clean"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&family=Mulish:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Sports Energy",
+    "heading": "Bebas Neue",
+    "body": "Barlow",
+    "mood": ["sports", "bold", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Gaming Edge",
+    "heading": "Rajdhani",
+    "body": "Chakra Petch",
+    "mood": ["gaming", "tech", "futuristic"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Chakra+Petch:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Music Beat",
+    "heading": "Permanent Marker",
+    "body": "Signika",
+    "mood": ["music", "creative", "bold"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Signika:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Kids Adventure",
+    "heading": "Bubblegum Sans",
+    "body": "Patrick Hand",
+    "mood": ["kids", "playful", "fun"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Patrick+Hand&display=swap"
+  },
+  {
+    "name": "Charity Heart",
+    "heading": "Raleway",
+    "body": "Nunito Sans",
+    "mood": ["charity", "warm", "friendly"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&family=Nunito+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Startup Velocity",
+    "heading": "Manrope",
+    "body": "Inter",
+    "mood": ["startup", "tech", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Editorial Serif",
+    "heading": "DM Serif Display",
+    "body": "DM Sans",
+    "mood": ["editorial", "elegant", "premium"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Fashion Week",
+    "heading": "Bodoni Moda",
+    "body": "Outfit",
+    "mood": ["fashion", "luxury", "elegant"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Outfit:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Design System",
+    "heading": "Schibsted Grotesk",
+    "body": "Inter",
+    "mood": ["design", "minimal", "tech"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Natural Living",
+    "heading": "Bitter",
+    "body": "Hind",
+    "mood": ["natural", "organic", "wellness"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Hind:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Clean Dashboard",
+    "heading": "Lexend",
+    "body": "IBM Plex Sans",
+    "mood": ["clean", "tech", "professional"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Luxury Gold",
+    "heading": "Cinzel",
+    "body": "Lora",
+    "mood": ["luxury", "elegant", "premium"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "SaaS Product",
+    "heading": "Albert Sans",
+    "body": "Nunito Sans",
+    "mood": ["startup", "clean", "professional"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Albert+Sans:wght@500;700&family=Nunito+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Retro Funk",
+    "heading": "Bungee",
+    "body": "Space Mono",
+    "mood": ["retro", "bold", "creative"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:wght@400;700&display=swap"
+  },
+  {
+    "name": "Health Tracker",
+    "heading": "Figtree",
+    "body": "Onest",
+    "mood": ["health", "clean", "modern"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Figtree:wght@500;700&family=Onest:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Brutalist Type",
+    "heading": "Unbounded",
+    "body": "Roboto Flex",
+    "mood": ["brutalist", "modern", "bold"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Roboto+Flex:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Food Magazine",
+    "heading": "Playfair Display SC",
+    "body": "Fira Sans",
+    "mood": ["food", "editorial", "elegant"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&family=Fira+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Travel Journal",
+    "heading": "Amatic SC",
+    "body": "Barlow Semi Condensed",
+    "mood": ["travel", "creative", "warm"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Kids Learn",
+    "heading": "Fredoka",
+    "body": "Comic Neue",
+    "mood": ["kids", "playful", "fun"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Comic+Neue:wght@400;700&display=swap"
+  },
+  {
+    "name": "Charity Impact",
+    "heading": "Volkhov",
+    "body": "Mulish",
+    "mood": ["charity", "professional", "warm"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Volkhov:wght@400;700&family=Mulish:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Gaming HUD",
+    "heading": "Press Start 2P",
+    "body": "Share Tech Mono",
+    "mood": ["gaming", "retro", "fun"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap"
+  },
+  {
+    "name": "Music Vinyl",
+    "heading": "Alfa Slab One",
+    "body": "Overpass",
+    "mood": ["music", "retro", "bold"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Overpass:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Finance Dashboard",
+    "heading": "Inter Tight",
+    "body": "Source Sans 3",
+    "mood": ["finance", "clean", "minimal"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700&family=Source+Sans+3:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Legal Document",
+    "heading": "Spectral",
+    "body": "Libre Franklin",
+    "mood": ["legal", "academic", "professional"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&family=Libre+Franklin:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Sports Modern",
+    "heading": "Barlow Condensed",
+    "body": "Saira",
+    "mood": ["sports", "modern", "bold"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Saira:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Futuristic Neon",
+    "heading": "Audiowide",
+    "body": "Titillium Web",
+    "mood": ["futuristic", "gaming", "tech"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Audiowide&family=Titillium+Web:wght@400;600;700&display=swap"
+  },
+  {
+    "name": "Geometric Clean",
+    "heading": "Red Hat Display",
+    "body": "Red Hat Text",
+    "mood": ["geometric", "professional", "corporate"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700&family=Red+Hat+Text:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Elegant Serif",
+    "heading": "Noto Serif Display",
+    "body": "Noto Sans",
+    "mood": ["elegant", "premium", "editorial"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;700&family=Noto+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Startup Fresh",
+    "heading": "Urbanist",
+    "body": "Wix Madefor Display",
+    "mood": ["startup", "modern", "clean"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700&family=Wix+Madefor+Display:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Fashion Editorial",
+    "heading": "Cormorant",
+    "body": "Montserrat",
+    "mood": ["fashion", "editorial", "luxury"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Montserrat:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Developer Console",
+    "heading": "Fira Code",
+    "body": "Fira Sans",
+    "mood": ["developer", "tech", "minimal"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Fira+Sans:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Wellness Retreat",
+    "heading": "Tenor Sans",
+    "body": "Poppins",
+    "mood": ["wellness", "natural", "elegant"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Poppins:wght@400;500;600&display=swap"
+  },
+  {
+    "name": "Vintage Craft",
+    "heading": "Abril Fatface",
+    "body": "Old Standard TT",
+    "mood": ["vintage", "creative", "warm"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Old+Standard+TT:wght@400;700&display=swap"
+  },
+  {
+    "name": "Corporate Edge",
+    "heading": "Encode Sans",
+    "body": "Roboto",
+    "mood": ["corporate", "professional", "clean"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Encode+Sans:wght@500;700&family=Roboto:wght@400;500;700&display=swap"
+  },
+  {
+    "name": "Playful Rounded",
+    "heading": "Comfortaa",
+    "body": "Varela Round",
+    "mood": ["playful", "friendly", "kids"],
+    "googleUrl": "https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Varela+Round&display=swap"
+  }
+]
