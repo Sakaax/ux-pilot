@@ -9,28 +9,48 @@ export interface LoadedRule {
 const CONTEXT_MAP: Record<string, string[]> = {
   landing: [
     "conversion-funnel/cta.md",
+    "conversion-funnel/landing-patterns.md",
     "seo-aeo/structure.md",
+    "seo-aeo/meta-og.md",
+    "seo-aeo/schema-org.md",
+    "seo-aeo/aeo.md",
+    "psychology/social-proof.md",
     "aesthetics/anti-patterns.md",
+    "aesthetics/typography-craft.md",
+    "aesthetics/backgrounds.md",
   ],
   signup: [
+    "conversion-funnel/signup-auth.md",
     "ux-patterns/forms-feedback.md",
     "ux-patterns/accessibility.md",
+    "psychology/trust.md",
   ],
   onboarding: [
     "ux-patterns/forms-feedback.md",
+    "ux-patterns/empty-states.md",
     "ux-patterns/accessibility.md",
+    "psychology/cognitive-load.md",
   ],
   dashboard: [
     "ux-patterns/navigation.md",
+    "ux-patterns/data-tables.md",
+    "ux-patterns/layout-responsive.md",
+    "ux-patterns/empty-states.md",
+    "ux-patterns/charts-data.md",
     "ux-patterns/accessibility.md",
   ],
   pricing: [
+    "conversion-funnel/pricing.md",
     "conversion-funnel/cta.md",
+    "psychology/social-proof.md",
+    "psychology/trust.md",
+    "psychology/persuasion.md",
     "ux-patterns/accessibility.md",
   ],
   checkout: [
-    "conversion-funnel/cta.md",
+    "conversion-funnel/checkout.md",
     "ux-patterns/forms-feedback.md",
+    "psychology/trust.md",
     "ux-patterns/accessibility.md",
   ],
   settings: [
@@ -39,7 +59,37 @@ const CONTEXT_MAP: Record<string, string[]> = {
     "ux-patterns/accessibility.md",
   ],
   data: [
+    "ux-patterns/charts-data.md",
+    "ux-patterns/data-tables.md",
+    "ux-patterns/layout-responsive.md",
+    "ux-patterns/accessibility.md",
+  ],
+  mobile: [
+    "ux-patterns/touch-interaction.md",
+    "ux-patterns/layout-responsive.md",
     "ux-patterns/navigation.md",
+  ],
+  design: [
+    "aesthetics/anti-patterns.md",
+    "aesthetics/typography-craft.md",
+    "aesthetics/backgrounds.md",
+    "aesthetics/styles.md",
+    "product-type/reasoning.md",
+  ],
+  retention: [
+    "conversion-funnel/retention.md",
+    "conversion-funnel/churn-prevention.md",
+    "psychology/cognitive-load.md",
+  ],
+  seo: [
+    "seo-aeo/structure.md",
+    "seo-aeo/meta-og.md",
+    "seo-aeo/performance-seo.md",
+    "seo-aeo/schema-org.md",
+    "seo-aeo/aeo.md",
+  ],
+  animation: [
+    "ux-patterns/animation.md",
     "ux-patterns/accessibility.md",
   ],
 };
