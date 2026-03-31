@@ -2,6 +2,11 @@
 
 > Your UX co-pilot — from idea to validated flow, in your terminal.
 
+```bash
+/plugin marketplace add Sakaax/ux-pilot
+/plugin install ux-pilot@ux-pilot
+```
+
 A Claude Code plugin that acts as a **senior UX designer**. It doesn't generate code blindly — it understands your product, challenges your choices, shows you the result in a live browser preview, and helps you iterate until the flow is validated.
 
 ## What makes it different
