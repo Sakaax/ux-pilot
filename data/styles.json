@@ -1,69 +1,471 @@
 [
-  { "name": "Minimalism & Swiss Style", "description": "Strict grids, clean typography, abundant whitespace. No unnecessary decoration.", "useCases": ["saas", "portfolios", "corporate"], "avoid": ["data-heavy apps", "gaming"], "cssHints": "font-family: Helvetica, sans-serif; max-width: 1200px; margin: 0 auto; line-height: 1.6;" },
-  { "name": "Neumorphism", "description": "Soft inner/outer shadows simulating extrusion on uniform light backgrounds.", "useCases": ["calculators", "music players", "dashboards"], "avoid": ["text-heavy", "accessibility-critical"], "cssHints": "box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff; border-radius: 16px; background: #e0e0e0;" },
-  { "name": "Glassmorphism", "description": "Frosted glass effect with blur and transparency over colorful backgrounds.", "useCases": ["dashboards", "cards", "modals", "overlays"], "avoid": ["heavy data tables", "low-contrast needs"], "cssHints": "backdrop-filter: blur(10px); background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px;" },
-  { "name": "Brutalism", "description": "Raw, unpolished. Thick borders, vivid colors, large type, anti-convention.", "useCases": ["art sites", "portfolios", "experimental"], "avoid": ["corporate", "healthcare", "finance"], "cssHints": "border: 3px solid #000; font-size: 2rem; font-weight: 900; text-transform: uppercase;" },
-  { "name": "3D & Hyperrealism", "description": "Three-dimensional elements, realistic textures, depth through shadows and perspective.", "useCases": ["product showcases", "gaming", "creative"], "avoid": ["minimal apps", "dashboards"], "cssHints": "transform: perspective(1000px) rotateY(-5deg); box-shadow: 0 25px 50px rgba(0,0,0,0.3);" },
-  { "name": "Vibrant & Block-based", "description": "Bold color blocks, strong geometric shapes, high saturation.", "useCases": ["education", "kids apps", "marketing"], "avoid": ["luxury", "legal", "healthcare"], "cssHints": "background: #FF6B35; color: #fff; padding: 2rem; border-radius: 0;" },
-  { "name": "Dark Mode (OLED)", "description": "Pure black backgrounds with vivid accents. Maximum contrast for OLED displays.", "useCases": ["developer tools", "fintech", "gaming", "media"], "avoid": ["print", "healthcare", "elderly users"], "cssHints": "background: #000000; color: #e5e5e5; --accent: #3b82f6;" },
-  { "name": "Accessible & Ethical", "description": "WCAG AAA compliant, high contrast, clear hierarchy, inclusive by default.", "useCases": ["government", "healthcare", "education", "public services"], "avoid": ["experimental", "gaming"], "cssHints": "font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #ffffff;" },
-  { "name": "Claymorphism", "description": "Clay-like 3D elements with soft pastel colors and inner shadows.", "useCases": ["landing pages", "onboarding", "playful apps"], "avoid": ["data-heavy", "enterprise"], "cssHints": "background: #f0e6ff; border-radius: 24px; box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1), 8px 8px 16px rgba(0,0,0,0.1);" },
-  { "name": "Aurora UI", "description": "Northern lights inspired gradients on dark backgrounds with ethereal colors.", "useCases": ["ai products", "creative tools", "music apps"], "avoid": ["corporate", "legal"], "cssHints": "background: linear-gradient(135deg, #0c0c1d, #1a0533, #0d2137); --glow: radial-gradient(circle, rgba(120,80,255,0.3), transparent);" },
-  { "name": "Retro-Futurism", "description": "80s retro mixed with futuristic. Neons, grids, saturated colors on dark.", "useCases": ["gaming", "entertainment", "creative"], "avoid": ["healthcare", "finance", "legal"], "cssHints": "background: #0a0a2e; color: #ff00ff; text-shadow: 0 0 10px #ff00ff; font-family: 'Orbitron', monospace;" },
-  { "name": "Flat Design", "description": "Zero shadows, zero gradients. Solid colors, simple icons, clean typography.", "useCases": ["saas", "corporate", "mobile apps"], "avoid": ["luxury", "immersive experiences"], "cssHints": "box-shadow: none; border-radius: 4px; background: #2196F3; color: #fff;" },
-  { "name": "Skeuomorphism", "description": "Realistic textures and materials mimicking physical objects.", "useCases": ["music apps", "note-taking", "creative tools"], "avoid": ["minimal apps", "dashboards"], "cssHints": "background: linear-gradient(180deg, #f5f5dc, #e5e5cc); border: 1px solid #ccc; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);" },
-  { "name": "Liquid Glass", "description": "Fluid, liquid surfaces with reflections, distortions, dynamic transparency.", "useCases": ["creative portfolios", "product pages", "premium apps"], "avoid": ["data tables", "forms-heavy"], "cssHints": "backdrop-filter: blur(20px) saturate(1.5); background: rgba(255,255,255,0.08); border-radius: 24px;" },
-  { "name": "Motion-Driven", "description": "Animation IS the design. Scroll-triggered, fluid transitions, micro-interactions.", "useCases": ["storytelling", "portfolios", "product launches"], "avoid": ["accessibility-first", "data apps"], "cssHints": "transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); animation: fadeInUp 0.6s ease-out;" },
-  { "name": "Micro-interactions", "description": "Focus on small, delightful interactions. Hover states, toggles, feedback animations.", "useCases": ["saas", "mobile apps", "onboarding"], "avoid": ["print", "static content"], "cssHints": "transition: transform 0.2s ease; &:hover { transform: scale(1.02); } &:active { transform: scale(0.98); }" },
-  { "name": "Inclusive Design", "description": "Designed for the full range of human diversity. Multiple input modes, flexible layouts.", "useCases": ["public services", "education", "healthcare"], "avoid": ["niche gaming", "experimental art"], "cssHints": "font-size: clamp(1rem, 2.5vw, 1.25rem); touch-action: manipulation; min-height: 44px;" },
-  { "name": "Zero Interface", "description": "The best interface is no interface. Voice, gesture, ambient computing.", "useCases": ["iot", "smart home", "ai assistants"], "avoid": ["data-heavy apps", "complex forms"], "cssHints": "/* minimal visual UI, focus on conversational/voice patterns */" },
-  { "name": "Soft UI Evolution", "description": "Evolved neumorphism. More subtle, better contrast, improved accessibility.", "useCases": ["settings panels", "dashboards", "mobile apps"], "avoid": ["high-density data", "e-commerce catalogs"], "cssHints": "box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.8); border-radius: 12px;" },
-  { "name": "Neubrutalism", "description": "Softened brutalism. Hard drop shadows, black borders, bright pastels.", "useCases": ["startups", "portfolios", "creative tools", "marketing"], "avoid": ["finance", "healthcare", "legal"], "cssHints": "border: 2px solid #000; box-shadow: 4px 4px 0 #000; border-radius: 8px; background: #FFE566;" },
-  { "name": "Bento Box Grid", "description": "Apple-style irregular grid. Cards of different sizes, controlled asymmetry.", "useCases": ["feature showcases", "portfolios", "dashboards"], "avoid": ["text-heavy content", "linear narratives"], "cssHints": "display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; grid-template-rows: auto;" },
-  { "name": "Y2K Aesthetic", "description": "Bubble shapes, chrome, iridescent colors, organic forms, 2000s nostalgia.", "useCases": ["fashion", "music", "youth brands"], "avoid": ["corporate", "finance", "healthcare"], "cssHints": "background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1); border-radius: 50%; filter: blur(0.5px);" },
-  { "name": "Cyberpunk UI", "description": "Neons, glitch effects, HUD elements, tech dystopian aesthetic.", "useCases": ["gaming", "crypto", "entertainment"], "avoid": ["healthcare", "education", "government"], "cssHints": "background: #0d0d0d; color: #00ff41; text-shadow: 0 0 5px #00ff41; font-family: 'Share Tech Mono', monospace;" },
-  { "name": "Organic Biophilic", "description": "Natural forms, earth colors, organic textures, soft curves.", "useCases": ["wellness", "food", "sustainability", "spa"], "avoid": ["tech startups", "gaming", "cybersecurity"], "cssHints": "border-radius: 32px; background: #f5f0e8; color: #3d3424; font-family: 'Lora', serif;" },
-  { "name": "AI-Native UI", "description": "Interfaces designed around AI interactions. Streaming text, adaptive layouts, conversational.", "useCases": ["ai products", "chatbots", "copilots"], "avoid": ["static content sites", "print"], "cssHints": "/* streaming text animation, adaptive containers, typing indicators */" },
-  { "name": "Memphis Design", "description": "Geometric, colorful, patterned, anti-minimalist, playful and bold.", "useCases": ["creative agencies", "youth brands", "art"], "avoid": ["corporate", "finance", "legal"], "cssHints": "background: #FF6B6B; color: #2D3436; border: 3px dashed #000; transform: rotate(-2deg);" },
-  { "name": "Vaporwave", "description": "Pastels, gradients, 90s internet aesthetics, grids, surreal imagery.", "useCases": ["music", "art", "nostalgia projects"], "avoid": ["corporate", "healthcare", "finance"], "cssHints": "background: linear-gradient(180deg, #ff71ce, #01cdfe, #05ffa1); color: #fff; font-family: 'VT323', monospace;" },
-  { "name": "Dimensional Layering", "description": "Explicit Z-axis depth. Parallax, multiple shadow layers, floating elements.", "useCases": ["portfolios", "product pages", "storytelling"], "avoid": ["data tables", "forms"], "cssHints": "box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 12px 24px rgba(0,0,0,0.1), 0 24px 48px rgba(0,0,0,0.1);" },
-  { "name": "Exaggerated Minimalism", "description": "Minimalism pushed to the extreme. One color, one font, maximum space.", "useCases": ["luxury", "art", "portfolios", "fashion"], "avoid": ["data-heavy", "e-commerce catalogs"], "cssHints": "background: #fafafa; color: #111; font-size: 4rem; letter-spacing: -0.04em; padding: 15vh 10vw;" },
-  { "name": "Kinetic Typography", "description": "Typography that moves. Text animations as the primary design element.", "useCases": ["agencies", "portfolios", "launches", "music"], "avoid": ["accessibility-first", "data apps"], "cssHints": "animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden;" },
-  { "name": "Parallax Storytelling", "description": "Narrative through scroll. Layers moving at different speeds.", "useCases": ["brand stories", "product launches", "campaigns"], "avoid": ["dashboards", "utility apps"], "cssHints": "background-attachment: fixed; transform: translateZ(-1px) scale(2);" },
-  { "name": "Swiss Modernism 2.0", "description": "Classic Swiss style modernized with color and motion. Grids + personality.", "useCases": ["saas", "corporate", "design studios"], "avoid": ["gaming", "kids apps"], "cssHints": "display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; font-family: 'Helvetica Neue', sans-serif;" },
-  { "name": "HUD / Sci-Fi FUI", "description": "Heads-up display interface. Circles, grids, data visualization, futuristic.", "useCases": ["monitoring", "gaming", "cybersecurity", "aerospace"], "avoid": ["e-commerce", "wellness", "food"], "cssHints": "border: 1px solid rgba(0,255,255,0.3); background: rgba(0,0,0,0.8); color: #00ffff; font-family: 'Rajdhani', sans-serif;" },
-  { "name": "Pixel Art", "description": "Retro gaming aesthetic. Visible pixels, limited palette, 8-bit nostalgia.", "useCases": ["gaming", "fun projects", "retro brands"], "avoid": ["corporate", "healthcare", "finance"], "cssHints": "image-rendering: pixelated; font-family: 'Press Start 2P', monospace; font-size: 8px;" },
-  { "name": "Bento Grids", "description": "Variation of Bento Box with emphasis on content variety within grid cells.", "useCases": ["feature pages", "dashboards", "portfolios"], "avoid": ["linear content", "long-form text"], "cssHints": "display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(200px, auto); gap: 12px;" },
-  { "name": "Spatial UI (VisionOS)", "description": "Apple Vision Pro style. Glass materials, depth, floating layers, subtle blur.", "useCases": ["premium apps", "ar/vr interfaces", "creative tools"], "avoid": ["budget apps", "data-heavy"], "cssHints": "backdrop-filter: blur(40px) saturate(1.2); background: rgba(255,255,255,0.05); border-radius: 24px; border: 0.5px solid rgba(255,255,255,0.1);" },
-  { "name": "E-Ink / Paper", "description": "Paper-like appearance. Low contrast, paper textures, editorial typography.", "useCases": ["readers", "blogs", "documentation", "newsletters"], "avoid": ["gaming", "dashboards", "interactive apps"], "cssHints": "background: #f4f1ea; color: #333; font-family: 'Literata', serif; line-height: 1.8;" },
-  { "name": "Gen Z Chaos / Maximalism", "description": "Everything at once. Clashing colors, mixed fonts, collage, maximum energy.", "useCases": ["youth brands", "music", "fashion", "art"], "avoid": ["corporate", "healthcare", "senior users"], "cssHints": "background: #FF00FF; color: #00FF00; font-size: 6rem; mix-blend-mode: difference; transform: rotate(3deg);" },
-  { "name": "Biomimetic / Organic 2.0", "description": "Advanced organic design. Nature-inspired algorithms, generative patterns.", "useCases": ["biotech", "sustainability", "wellness", "science"], "avoid": ["corporate traditional", "fintech"], "cssHints": "border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; background: #e8f5e9;" },
-  { "name": "Anti-Polish / Raw Aesthetic", "description": "Intentionally unpolished. Authentic, underground, no finish.", "useCases": ["indie brands", "art", "music", "zines"], "avoid": ["corporate", "luxury", "healthcare"], "cssHints": "font-family: 'Courier New', monospace; border: 1px dashed #666; background: #fafafa;" },
-  { "name": "Tactile Digital / Deformable UI", "description": "Elements that react to touch. Deformation, elasticity, physics-based.", "useCases": ["mobile apps", "creative tools", "games"], "avoid": ["data apps", "enterprise"], "cssHints": "transition: transform 0.15s ease; &:active { transform: scale(0.95); }" },
-  { "name": "Nature Distilled", "description": "Nature abstracted into design. Earth colors, simplified organic forms.", "useCases": ["wellness", "food", "eco brands", "outdoor"], "avoid": ["tech startups", "gaming"], "cssHints": "background: #faf6f0; color: #4a3728; border-radius: 16px; font-family: 'Prata', serif;" },
-  { "name": "Interactive Cursor Design", "description": "Custom cursor as design element. Trails, effects, hover interactions.", "useCases": ["portfolios", "agencies", "creative showcases"], "avoid": ["mobile", "accessibility-first", "utility apps"], "cssHints": "cursor: none; /* custom cursor via JS */" },
-  { "name": "Voice-First Multimodal", "description": "Voice as primary input with visual feedback. Ambient, minimal chrome.", "useCases": ["smart speakers", "accessibility", "hands-free"], "avoid": ["data-heavy", "complex forms"], "cssHints": "/* minimal visual, focus on audio feedback and visual pulse indicators */" },
-  { "name": "3D Product Preview", "description": "Interactive 3D product visualization. Rotation, zoom, configuration.", "useCases": ["e-commerce", "automotive", "furniture", "fashion"], "avoid": ["text content", "blogs", "documentation"], "cssHints": "/* Three.js or model-viewer web component */" },
-  { "name": "Gradient Mesh / Aurora Evolved", "description": "Complex multi-color gradient meshes. Organic, immersive, evolved aurora.", "useCases": ["creative tools", "ai products", "music", "art"], "avoid": ["corporate", "data tables"], "cssHints": "background: conic-gradient(from 45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);" },
-  { "name": "Editorial Grid / Magazine", "description": "Magazine layout. Multi-column, pull quotes, full-bleed images, editorial type.", "useCases": ["blogs", "news", "agencies", "portfolios"], "avoid": ["dashboards", "saas apps"], "cssHints": "display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 32px; font-family: 'Playfair Display', serif;" },
-  { "name": "Chromatic Aberration / RGB Split", "description": "RGB color channel splitting effect. Glitch-inspired, cyber aesthetic.", "useCases": ["gaming", "music", "tech showcases"], "avoid": ["healthcare", "government", "senior users"], "cssHints": "text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;" },
-  { "name": "Vintage Analog / Retro Film", "description": "Film grain, desaturated colors, retro typography, analog nostalgia.", "useCases": ["photography", "film", "fashion", "cafes"], "avoid": ["tech startups", "saas", "fintech"], "cssHints": "filter: sepia(0.1) contrast(1.05); background: #f5f0e8; font-family: 'Courier Prime', monospace;" },
-  { "name": "Hero-Centric Design", "description": "Massive full-screen hero taking all attention. Scroll reveals the rest.", "useCases": ["product launches", "brand sites", "landing pages"], "avoid": ["dashboards", "data apps"], "cssHints": "min-height: 100vh; display: flex; align-items: center; justify-content: center;" },
-  { "name": "Conversion-Optimized", "description": "Every element oriented toward conversion. Visible CTA, minimal friction.", "useCases": ["landing pages", "saas", "e-commerce"], "avoid": ["content sites", "documentation"], "cssHints": "/* prominent CTA, social proof near fold, minimal distractions */" },
-  { "name": "Feature-Rich Showcase", "description": "Each feature gets its own detailed section with demo or screenshot.", "useCases": ["saas", "developer tools", "complex products"], "avoid": ["simple products", "single-feature tools"], "cssHints": "display: grid; gap: 4rem; padding: 4rem 0; /* alternating image/text layout */" },
-  { "name": "Minimal & Direct", "description": "Direct message, few sections, immediate CTA. No fluff.", "useCases": ["micro-saas", "utilities", "newsletters", "waitlists"], "avoid": ["complex products", "enterprise"], "cssHints": "max-width: 640px; margin: 0 auto; text-align: center; padding: 4rem 2rem;" },
-  { "name": "Social Proof-Focused", "description": "Testimonials, reviews, case studies as the core content.", "useCases": ["services", "consulting", "education", "b2b"], "avoid": ["developer tools", "open source"], "cssHints": "/* testimonial cards grid, star ratings, client logos, video testimonials */" },
-  { "name": "Interactive Product Demo", "description": "Live demo in the hero. User can try before signing up.", "useCases": ["saas", "developer tools", "design tools"], "avoid": ["services", "consulting"], "cssHints": "/* embedded demo iframe or interactive component */" },
-  { "name": "Trust & Authority", "description": "Certifications, logos, case studies, security badges. Credibility first.", "useCases": ["fintech", "healthcare", "enterprise", "legal"], "avoid": ["startups", "indie projects"], "cssHints": "/* badge grid, partner logos in grayscale, certification icons */" },
-  { "name": "Storytelling-Driven", "description": "Progressive narrative. Hero → problem → solution → proof → CTA.", "useCases": ["brand sites", "product launches", "campaigns"], "avoid": ["utility apps", "dashboards"], "cssHints": "scroll-snap-type: y mandatory; /* section-by-section reveal */" },
-  { "name": "Data-Dense Dashboard", "description": "Maximum information density. Tight grids, small type, many widgets.", "useCases": ["analytics", "monitoring", "trading", "ops"], "avoid": ["onboarding", "consumer apps"], "cssHints": "display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; font-size: 12px;" },
-  { "name": "Heat Map & Heatmap Style", "description": "Color intensity represents data values. Calendars, matrices, geographic.", "useCases": ["analytics", "behavior tracking", "geographic data"], "avoid": ["simple apps", "content sites"], "cssHints": "/* color scale from green to red, matrix grid layout */" },
-  { "name": "Executive Dashboard", "description": "Few KPIs, clear and large. High-level view for decision makers.", "useCases": ["c-suite views", "reporting", "investor dashboards"], "avoid": ["developer tools", "detailed analytics"], "cssHints": "font-size: 3rem; font-weight: 200; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;" },
-  { "name": "Real-Time Monitoring", "description": "Live data, auto-updates, alerts, status indicators.", "useCases": ["devops", "infrastructure", "iot", "trading"], "avoid": ["static reports", "content sites"], "cssHints": "/* live updating values, status dots, sparklines, alert badges */" },
-  { "name": "Drill-Down Analytics", "description": "Overview → click → detail. Navigate through data layers.", "useCases": ["business intelligence", "analytics platforms"], "avoid": ["simple apps", "consumer products"], "cssHints": "/* breadcrumb nav, expandable rows, detail panels */" },
-  { "name": "Comparative Analysis Dashboard", "description": "Side-by-side comparisons, benchmarks, deltas, trend lines.", "useCases": ["market research", "competitive analysis", "a/b testing"], "avoid": ["simple dashboards", "consumer apps"], "cssHints": "display: grid; grid-template-columns: 1fr 1fr; gap: 16px; /* delta indicators, comparison charts */" },
-  { "name": "Predictive Analytics", "description": "Forecasts, projections, confidence intervals, ML model outputs.", "useCases": ["ai products", "finance", "demand planning"], "avoid": ["simple tracking", "consumer apps"], "cssHints": "/* forecast lines with confidence bands, scenario toggles */" },
-  { "name": "User Behavior Analytics", "description": "Funnels, heatmaps, user journeys, retention curves, cohort analysis.", "useCases": ["product analytics", "marketing analytics", "ux research"], "avoid": ["infrastructure", "financial data"], "cssHints": "/* funnel visualization, retention matrix, session replay */" },
-  { "name": "Financial Dashboard", "description": "P&L, cash flow, burn rate, runway. Precision and trust.", "useCases": ["fintech", "accounting", "investor reporting"], "avoid": ["casual apps", "gaming"], "cssHints": "font-variant-numeric: tabular-nums; /* green for positive, red for negative, aligned decimals */" },
-  { "name": "Sales Intelligence Dashboard", "description": "Pipeline visualization, deal stages, performance by rep, forecasts.", "useCases": ["crm", "sales teams", "revenue ops"], "avoid": ["developer tools", "consumer apps"], "cssHints": "/* kanban pipeline, bar charts by rep, conversion rates */" }
+  {
+    "name": "Minimalism & Swiss Style",
+    "description": "Clean layouts with generous whitespace, grid-based alignment, and restrained typography inspired by the International Typographic Style.",
+    "useCases": ["corporate sites", "portfolios", "editorial"],
+    "avoid": ["playful brands", "content-heavy apps"],
+    "cssHints": "font-family: 'Helvetica Neue', sans-serif; display: grid; gap: 2rem; max-width: 1200px; margin: 0 auto; line-height: 1.6;"
+  },
+  {
+    "name": "Neumorphism",
+    "description": "Soft, extruded UI elements that appear to push out of the background using subtle inner and outer shadows on a flat surface.",
+    "useCases": ["settings panels", "calculators", "music players"],
+    "avoid": ["text-heavy interfaces", "accessibility-critical apps"],
+    "cssHints": "background: #e0e5ec; border-radius: 16px; box-shadow: 8px 8px 16px #b8bec7, -8px -8px 16px #ffffff;"
+  },
+  {
+    "name": "Glassmorphism",
+    "description": "Frosted glass effect with blur and transparency, creating depth through layered translucent surfaces over colorful backgrounds.",
+    "useCases": ["dashboards", "cards", "modals"],
+    "avoid": ["heavy data tables", "accessibility-first"],
+    "cssHints": "backdrop-filter: blur(10px); background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px;"
+  },
+  {
+    "name": "Brutalism",
+    "description": "Raw, unpolished aesthetic with bold typography, harsh contrasts, exposed structure, and intentionally jarring layouts.",
+    "useCases": ["art portfolios", "experimental sites", "agency pages"],
+    "avoid": ["corporate clients", "e-commerce", "elderly users"],
+    "cssHints": "font-family: 'Courier New', monospace; border: 3px solid #000; background: #ff0; color: #000; text-transform: uppercase;"
+  },
+  {
+    "name": "3D & Hyperrealism",
+    "description": "Photorealistic 3D renders and immersive visual elements that create tangible depth and realism in the interface.",
+    "useCases": ["product showcases", "gaming sites", "immersive landing pages"],
+    "avoid": ["low-bandwidth users", "simple content sites"],
+    "cssHints": "perspective: 1000px; transform: rotateY(-5deg); box-shadow: 0 25px 50px rgba(0,0,0,0.3); transition: transform 0.6s ease;"
+  },
+  {
+    "name": "Vibrant & Block-based",
+    "description": "Bold color blocks with strong geometric shapes, high saturation palettes, and clear visual hierarchy through color contrast.",
+    "useCases": ["creative agencies", "education platforms", "marketing pages"],
+    "avoid": ["medical apps", "conservative brands"],
+    "cssHints": "background: #FF6B35; color: #fff; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); padding: 2rem;"
+  },
+  {
+    "name": "Dark Mode (OLED)",
+    "description": "True black backgrounds optimized for OLED screens with carefully calibrated contrast ratios and vivid accent colors that pop.",
+    "useCases": ["developer tools", "media apps", "fintech", "gaming"],
+    "avoid": ["print-oriented", "outdoor-use apps"],
+    "cssHints": "background: #000000; color: #e5e5e5; --accent: #3b82f6; border-color: rgba(255,255,255,0.08);"
+  },
+  {
+    "name": "Accessible & Ethical",
+    "description": "WCAG AAA compliant design prioritizing readability, keyboard navigation, screen reader support, and inclusive interaction patterns.",
+    "useCases": ["government sites", "healthcare", "education", "public services"],
+    "avoid": ["experimental art projects"],
+    "cssHints": "font-size: 18px; line-height: 1.8; color: #1a1a1a; background: #ffffff; outline-offset: 3px;"
+  },
+  {
+    "name": "Claymorphism",
+    "description": "Soft, inflated 3D clay-like elements with rounded corners, pastel colors, and playful inner shadows that mimic molded clay.",
+    "useCases": ["children's apps", "onboarding flows", "playful brands"],
+    "avoid": ["finance apps", "enterprise dashboards"],
+    "cssHints": "background: #f0e6ff; border-radius: 24px; box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1), 8px 8px 16px rgba(0,0,0,0.1);"
+  },
+  {
+    "name": "Aurora UI",
+    "description": "Ethereal gradient backgrounds inspired by northern lights with smooth color transitions and dreamy atmospheric effects on dark canvases.",
+    "useCases": ["AI products", "creative tools", "music apps"],
+    "avoid": ["data-dense interfaces", "formal corporate"],
+    "cssHints": "background: linear-gradient(135deg, #0c0c1d, #1a0533, #0d2137); --glow: radial-gradient(circle, rgba(120,80,255,0.3), transparent);"
+  },
+  {
+    "name": "Retro-Futurism",
+    "description": "Nostalgic vision of the future blending vintage sci-fi aesthetics with neon accents, chrome grid effects, and retro typography.",
+    "useCases": ["entertainment sites", "gaming platforms", "creative portfolios"],
+    "avoid": ["minimalist brands", "accessibility-first"],
+    "cssHints": "font-family: 'Orbitron', monospace; color: #ff00ff; background: #0a0a2e; text-shadow: 0 0 10px #ff00ff; border: 1px solid #ff00ff;"
+  },
+  {
+    "name": "Flat Design",
+    "description": "Two-dimensional visual style without shadows or gradients, relying on clean iconography, bold colors, and typographic hierarchy.",
+    "useCases": ["mobile apps", "SaaS platforms", "admin panels"],
+    "avoid": ["luxury brands", "immersive experiences"],
+    "cssHints": "box-shadow: none; border-radius: 4px; background: #2196F3; color: #fff; font-weight: 600; border: none;"
+  },
+  {
+    "name": "Skeuomorphism",
+    "description": "Digital interfaces that mimic real-world textures and materials like leather, wood, and metal for tactile familiarity.",
+    "useCases": ["note-taking apps", "instrument UIs", "nostalgic brands"],
+    "avoid": ["modern SaaS", "performance-critical apps"],
+    "cssHints": "background: linear-gradient(180deg, #f5f5dc, #e5e5cc); border: 1px solid #ccc; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5); border-radius: 8px;"
+  },
+  {
+    "name": "Liquid Glass",
+    "description": "Fluid, transparent surfaces with dynamic refraction effects that respond to content and light, inspired by Apple VisionOS and iOS 26.",
+    "useCases": ["hero sections", "navigation bars", "floating panels"],
+    "avoid": ["low-end devices", "text-heavy layouts"],
+    "cssHints": "backdrop-filter: blur(40px) saturate(1.5); background: rgba(255,255,255,0.08); border-radius: 24px; border: 0.5px solid rgba(255,255,255,0.2);"
+  },
+  {
+    "name": "Motion-Driven",
+    "description": "Animation-first approach where transitions, parallax, and micro-animations guide user attention and communicate state changes.",
+    "useCases": ["storytelling sites", "product launches", "portfolios"],
+    "avoid": ["users with vestibular disorders", "SEO-critical pages"],
+    "cssHints": "transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); animation: fadeInUp 0.6s ease-out; will-change: transform, opacity;"
+  },
+  {
+    "name": "Micro-interactions",
+    "description": "Subtle, purposeful animations on individual UI elements that provide feedback, guide tasks, and delight users on hover, click, and scroll.",
+    "useCases": ["form inputs", "buttons", "toggles", "notifications"],
+    "avoid": ["performance-constrained apps", "static content"],
+    "cssHints": "transition: transform 0.2s ease, box-shadow 0.2s ease; &:hover { transform: scale(1.02); } &:active { transform: scale(0.98); }"
+  },
+  {
+    "name": "Inclusive Design",
+    "description": "Universal design approach ensuring interfaces work for all abilities, devices, and contexts with adaptive layouts and multiple input modes.",
+    "useCases": ["public services", "education platforms", "healthcare"],
+    "avoid": ["niche artistic projects"],
+    "cssHints": "font-size: clamp(1rem, 2.5vw, 1.25rem); line-height: 1.6; touch-action: manipulation; min-height: 44px;"
+  },
+  {
+    "name": "Zero Interface",
+    "description": "Invisible UI paradigm where the interface disappears, relying on voice, gesture, ambient computing, and contextual awareness.",
+    "useCases": ["smart home UIs", "wearable apps", "AI assistants"],
+    "avoid": ["complex workflows", "data entry"],
+    "cssHints": "opacity: 0; transition: opacity 0.3s ease; &:hover { opacity: 1; } background: transparent; border: none;"
+  },
+  {
+    "name": "Soft UI Evolution",
+    "description": "Next-generation neumorphism with improved contrast ratios, better accessibility, and refined shadow systems for usable soft interfaces.",
+    "useCases": ["smart home controls", "media players", "preference panels"],
+    "avoid": ["dense data tables", "e-commerce catalogs"],
+    "cssHints": "box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.8); border-radius: 12px; background: #e8edf2;"
+  },
+  {
+    "name": "Neubrutalism",
+    "description": "Modern brutalism softened with color, playful shadows, and structured chaos combining raw aesthetics with usable interfaces.",
+    "useCases": ["SaaS landing pages", "tech blogs", "creative tools", "marketing"],
+    "avoid": ["luxury brands", "conservative industries"],
+    "cssHints": "border: 2px solid #000; box-shadow: 4px 4px 0 #000; border-radius: 8px; background: #FFE566; font-weight: 700;"
+  },
+  {
+    "name": "Bento Box Grid",
+    "description": "Asymmetric grid layout inspired by Japanese bento boxes with varying cell sizes creating visual interest and content hierarchy.",
+    "useCases": ["feature showcases", "portfolios", "dashboards"],
+    "avoid": ["linear content flows", "long-form text"],
+    "cssHints": "display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; grid-auto-rows: auto;"
+  },
+  {
+    "name": "Y2K Aesthetic",
+    "description": "Turn-of-millennium nostalgia with bubble fonts, chrome effects, bright gradients, iridescent colors, and early-web visual motifs.",
+    "useCases": ["fashion brands", "music sites", "youth brands"],
+    "avoid": ["enterprise software", "legal sites"],
+    "cssHints": "background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1); border-radius: 50%; filter: blur(0.5px); color: #fff;"
+  },
+  {
+    "name": "Cyberpunk UI",
+    "description": "Neon-soaked dark interfaces with glitch effects, scan lines, angular geometry, and high-tech dystopian atmosphere.",
+    "useCases": ["gaming platforms", "crypto dashboards", "entertainment"],
+    "avoid": ["healthcare", "children's content", "accessibility-first"],
+    "cssHints": "background: #0d0d0d; color: #00ff41; text-shadow: 0 0 5px #00ff41; font-family: 'Share Tech Mono', monospace; border: 1px solid #00ff41;"
+  },
+  {
+    "name": "Organic Biophilic",
+    "description": "Nature-inspired design with earthy tones, flowing organic shapes, botanical illustrations, and natural textures.",
+    "useCases": ["wellness brands", "eco companies", "food & beverage", "spa"],
+    "avoid": ["tech-forward brands", "gaming"],
+    "cssHints": "border-radius: 32px; background: #f5f0e8; color: #3d3424; font-family: 'Lora', serif;"
+  },
+  {
+    "name": "AI-Native UI",
+    "description": "Interfaces designed around AI interaction patterns with conversational flows, streaming text, progressive disclosure, and adaptive content areas.",
+    "useCases": ["chatbots", "AI assistants", "generative tools"],
+    "avoid": ["static brochure sites", "print layouts"],
+    "cssHints": "display: flex; flex-direction: column; gap: 1rem; max-width: 680px; .ai-bubble { background: #f0f4ff; border-radius: 18px 18px 18px 4px; padding: 1rem; }"
+  },
+  {
+    "name": "Memphis Design",
+    "description": "Bold geometric patterns, clashing colors, squiggly lines, and playful asymmetry inspired by the 1980s Memphis Group movement.",
+    "useCases": ["creative agencies", "event branding", "youth-oriented sites"],
+    "avoid": ["corporate enterprise", "medical interfaces"],
+    "cssHints": "background: #FF6B6B; color: #2D3436; border: 3px dashed #000; transform: rotate(-2deg);"
+  },
+  {
+    "name": "Vaporwave",
+    "description": "Retro-internet aesthetic with pastel gradients, Greek busts, palm trees, grid overlays, and 80s-90s digital nostalgia.",
+    "useCases": ["music platforms", "art projects", "nostalgia brands"],
+    "avoid": ["professional services", "B2B software"],
+    "cssHints": "background: linear-gradient(180deg, #ff71ce, #01cdfe, #05ffa1); color: #fff; font-family: 'VT323', monospace; text-shadow: 3px 3px #ff00ff;"
+  },
+  {
+    "name": "Dimensional Layering",
+    "description": "Multi-plane depth composition with floating cards, z-axis separation, and shadow hierarchies creating immersive spatial layouts.",
+    "useCases": ["pricing pages", "feature comparisons", "portfolios"],
+    "avoid": ["print-like layouts", "minimal designs"],
+    "cssHints": "box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 12px 24px rgba(0,0,0,0.1), 0 24px 48px rgba(0,0,0,0.1); position: relative; z-index: 1;"
+  },
+  {
+    "name": "Exaggerated Minimalism",
+    "description": "Ultra-sparse layouts with oversized typography, extreme whitespace, and single focal elements that command attention through restraint.",
+    "useCases": ["luxury brands", "artist portfolios", "fashion"],
+    "avoid": ["content-rich apps", "e-commerce catalogs"],
+    "cssHints": "font-size: 4rem; font-weight: 100; letter-spacing: -0.04em; padding: 15vh 10vw; color: #111; background: #fafafa;"
+  },
+  {
+    "name": "Kinetic Typography",
+    "description": "Typography as the primary visual element with animated text, variable fonts, scroll-triggered text effects, and typographic compositions.",
+    "useCases": ["agency sites", "portfolios", "product launches", "music"],
+    "avoid": ["data dashboards", "form-heavy apps"],
+    "cssHints": "font-variation-settings: 'wght' 900; font-size: 8vw; mix-blend-mode: difference; animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);"
+  },
+  {
+    "name": "Parallax Storytelling",
+    "description": "Scroll-driven narrative experience with layered parallax movement, sequential content reveals, and cinematic pacing.",
+    "useCases": ["brand stories", "product launches", "campaigns"],
+    "avoid": ["utility apps", "accessibility-critical"],
+    "cssHints": "background-attachment: fixed; transform: translateZ(-1px) scale(2); scroll-snap-type: y mandatory; overflow-y: scroll;"
+  },
+  {
+    "name": "Swiss Modernism 2.0",
+    "description": "Updated Swiss design principles with computational grids, variable fonts, systematic color tokens, and responsive typographic scales.",
+    "useCases": ["design systems", "documentation", "corporate sites"],
+    "avoid": ["playful consumer apps", "youth brands"],
+    "cssHints": "display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; font-family: 'Helvetica Neue', sans-serif; font-feature-settings: 'tnum';"
+  },
+  {
+    "name": "HUD / Sci-Fi FUI",
+    "description": "Heads-up display interfaces with circular gauges, wireframe elements, scan line overlays, and futuristic data visualization panels.",
+    "useCases": ["gaming overlays", "cybersecurity dashboards", "monitoring", "aerospace"],
+    "avoid": ["consumer e-commerce", "children's apps"],
+    "cssHints": "border: 1px solid rgba(0,255,255,0.3); background: rgba(0,0,0,0.8); color: #00ffff; font-family: 'Rajdhani', sans-serif;"
+  },
+  {
+    "name": "Pixel Art",
+    "description": "Retro pixel aesthetic with blocky graphics, limited color palettes, 8-bit typography, and nostalgic game-inspired visual elements.",
+    "useCases": ["indie games", "retro-themed sites", "developer blogs"],
+    "avoid": ["luxury brands", "professional services"],
+    "cssHints": "image-rendering: pixelated; font-family: 'Press Start 2P', monospace; font-size: 8px; background: #2b2b2b; color: #4ade80;"
+  },
+  {
+    "name": "Bento Grids",
+    "description": "Modern asymmetric card grid layouts with rounded corners and subtle borders, popularized by Apple and used for feature highlights.",
+    "useCases": ["feature pages", "dashboards", "portfolios"],
+    "avoid": ["text-heavy articles", "sequential workflows"],
+    "cssHints": "display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(200px, auto); gap: 12px; border-radius: 24px;"
+  },
+  {
+    "name": "Spatial UI (VisionOS)",
+    "description": "Three-dimensional spatial interface design for mixed reality with floating panels, depth cues, and eye-tracking-friendly hit targets.",
+    "useCases": ["AR/VR apps", "spatial computing", "premium creative tools"],
+    "avoid": ["2D-only platforms", "low-resource devices"],
+    "cssHints": "backdrop-filter: blur(40px) saturate(1.2); background: rgba(255,255,255,0.05); border-radius: 24px; border: 0.5px solid rgba(255,255,255,0.1);"
+  },
+  {
+    "name": "E-Ink / Paper",
+    "description": "Minimal, paper-like aesthetic optimized for readability with high contrast text, serif typography, and zero visual clutter.",
+    "useCases": ["reading apps", "documentation", "newsletters"],
+    "avoid": ["media-rich sites", "interactive dashboards"],
+    "cssHints": "background: #f4f1ea; color: #333; font-family: 'Literata', serif; line-height: 1.8; max-width: 65ch;"
+  },
+  {
+    "name": "Gen Z Chaos / Maximalism",
+    "description": "Sensory overload aesthetic with clashing colors, mixed media, sticker-like elements, meme culture references, and anti-design principles.",
+    "useCases": ["streetwear brands", "music platforms", "fashion", "art"],
+    "avoid": ["corporate", "healthcare", "elderly users"],
+    "cssHints": "background: #FF00FF; color: #00FF00; font-size: 6rem; mix-blend-mode: difference; transform: rotate(3deg);"
+  },
+  {
+    "name": "Biomimetic / Organic 2.0",
+    "description": "Advanced nature-derived UI with generative organic shapes, algorithmic growth patterns, and fluid topology-inspired layouts.",
+    "useCases": ["biotech sites", "sustainability platforms", "wellness", "science"],
+    "avoid": ["structured data apps", "grid-heavy layouts"],
+    "cssHints": "border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; background: #e8f5e9; clip-path: ellipse(70% 60% at 50% 50%);"
+  },
+  {
+    "name": "Anti-Polish / Raw Aesthetic",
+    "description": "Intentionally unfinished look with visible grid lines, exposed markup references, developer-tool-inspired elements, and unrefined typography.",
+    "useCases": ["indie brands", "art projects", "developer tools"],
+    "avoid": ["luxury brands", "regulated industries"],
+    "cssHints": "font-family: 'Courier New', monospace; border: 1px dashed #666; background: #fafafa; outline: 1px solid rgba(255,0,0,0.2);"
+  },
+  {
+    "name": "Tactile Digital / Deformable UI",
+    "description": "Interactive elements that respond to touch and cursor with elastic deformation, rubber-band physics, and squeeze animations.",
+    "useCases": ["creative tools", "mobile apps", "games"],
+    "avoid": ["productivity apps", "data-heavy interfaces"],
+    "cssHints": "transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1); &:active { transform: scale(0.95); } border-radius: 16px; cursor: grab;"
+  },
+  {
+    "name": "Nature Distilled",
+    "description": "Abstracted natural elements reduced to essential geometric forms with muted earth tones and subtle organic textures.",
+    "useCases": ["wellness apps", "sustainable brands", "hospitality"],
+    "avoid": ["high-energy brands", "tech-forward startups"],
+    "cssHints": "background: #faf6f0; color: #4a3728; border-radius: 16px; font-family: 'Prata', serif;"
+  },
+  {
+    "name": "Interactive Cursor Design",
+    "description": "Custom cursor interactions that transform based on context, with trail effects, magnetic elements, and cursor-as-content patterns.",
+    "useCases": ["portfolios", "agency sites", "creative showcases"],
+    "avoid": ["mobile-first apps", "accessibility-critical"],
+    "cssHints": "cursor: none; .custom-cursor { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #000; pointer-events: none; mix-blend-mode: difference; }"
+  },
+  {
+    "name": "Voice-First Multimodal",
+    "description": "Interfaces designed primarily for voice interaction with visual feedback, waveform displays, and progressive enhancement for screen use.",
+    "useCases": ["voice assistants", "accessibility tools", "hands-free apps"],
+    "avoid": ["text-heavy content", "complex forms"],
+    "cssHints": "display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #1a1a2e; .waveform { fill: #e94560; animation: pulse 1.5s infinite; }"
+  },
+  {
+    "name": "3D Product Preview",
+    "description": "Immersive product visualization with 360-degree rotation, zoom, material switching, and interactive hotspots on 3D models.",
+    "useCases": ["e-commerce", "automotive sites", "furniture stores"],
+    "avoid": ["service-based businesses", "text-only content"],
+    "cssHints": "perspective: 800px; transform-style: preserve-3d; transition: transform 0.5s ease; background: radial-gradient(circle, #f0f0f0, #e0e0e0);"
+  },
+  {
+    "name": "Gradient Mesh / Aurora Evolved",
+    "description": "Complex multi-point gradient meshes with animated color shifts creating dynamic, living backgrounds that evolve over time.",
+    "useCases": ["hero sections", "AI products", "music apps", "art"],
+    "avoid": ["print design", "performance-constrained"],
+    "cssHints": "background: conic-gradient(from 45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b); filter: blur(60px); animation: meshRotate 20s linear infinite;"
+  },
+  {
+    "name": "Editorial Grid / Magazine",
+    "description": "Publication-inspired layouts with multi-column text, pull quotes, large imagery, drop caps, and sophisticated typographic rhythm.",
+    "useCases": ["blogs", "online magazines", "agency portfolios"],
+    "avoid": ["app interfaces", "dashboards"],
+    "cssHints": "display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 32px; font-family: 'Playfair Display', serif; line-height: 1.7;"
+  },
+  {
+    "name": "Chromatic Aberration / RGB Split",
+    "description": "Color channel separation effect with offset red, green, and blue layers creating a glitchy, high-energy visual distortion.",
+    "useCases": ["music sites", "gaming platforms", "tech showcases"],
+    "avoid": ["readability-critical", "government", "accessibility-first"],
+    "cssHints": "text-shadow: 2px 0 #ff0000, -2px 0 #00ffff; animation: glitch 0.3s infinite; mix-blend-mode: screen;"
+  },
+  {
+    "name": "Vintage Analog / Retro Film",
+    "description": "Warm analog photography feel with film grain overlays, faded color palettes, rounded corners, and nostalgic textural elements.",
+    "useCases": ["photography sites", "lifestyle brands", "cafes"],
+    "avoid": ["tech products", "data-driven apps"],
+    "cssHints": "filter: sepia(0.1) contrast(1.05); background: #f5f0e8; font-family: 'Courier Prime', monospace; color: #5c4033;"
+  },
+  {
+    "name": "Hero-Centric Design",
+    "description": "Landing page style dominated by a massive hero section with full-screen imagery, bold headline, and single clear call-to-action.",
+    "useCases": ["product launches", "SaaS landing pages", "event promotions"],
+    "avoid": ["content-first blogs", "multi-purpose portals"],
+    "cssHints": "min-height: 100vh; display: flex; align-items: center; justify-content: center; background-size: cover; text-align: center;"
+  },
+  {
+    "name": "Conversion-Optimized",
+    "description": "Performance-focused landing design with strategic CTA placement, urgency elements, trust badges, and friction-reducing form patterns.",
+    "useCases": ["SaaS signups", "lead generation", "product sales"],
+    "avoid": ["brand storytelling", "artistic portfolios"],
+    "cssHints": ".cta { background: #2563eb; color: #fff; padding: 1rem 2.5rem; border-radius: 8px; font-weight: 700; } .trust-badge { display: flex; gap: 1rem; }"
+  },
+  {
+    "name": "Feature-Rich Showcase",
+    "description": "Landing layout designed to highlight multiple product features with alternating sections, screenshots, icons, and benefit-driven copy.",
+    "useCases": ["SaaS products", "developer tools", "complex platforms"],
+    "avoid": ["single-purpose tools", "minimal brands"],
+    "cssHints": "display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 4rem 0;"
+  },
+  {
+    "name": "Minimal & Direct",
+    "description": "Stripped-down landing page with a single headline, brief description, one input field, and immediate action focus.",
+    "useCases": ["waitlists", "beta signups", "coming soon pages"],
+    "avoid": ["complex products needing explanation"],
+    "cssHints": "max-width: 640px; margin: 0 auto; text-align: center; padding: 4rem 2rem; font-family: 'Inter', sans-serif;"
+  },
+  {
+    "name": "Social Proof-Focused",
+    "description": "Landing design built around testimonials, logos, case studies, metrics, and user-generated content to establish credibility.",
+    "useCases": ["B2B services", "consulting firms", "education platforms"],
+    "avoid": ["new products without users", "stealth launches"],
+    "cssHints": ".testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; } .metric { font-size: 3rem; font-weight: 800; color: #1e40af; }"
+  },
+  {
+    "name": "Interactive Product Demo",
+    "description": "Landing page with embedded interactive demos, live previews, code playgrounds, or guided product tours as the core experience.",
+    "useCases": ["developer tools", "design tools", "API products"],
+    "avoid": ["physical products", "service businesses"],
+    "cssHints": ".demo-container { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }"
+  },
+  {
+    "name": "Trust & Authority",
+    "description": "Authoritative landing design with professional typography, certification badges, security seals, and institutional visual language.",
+    "useCases": ["financial services", "legal firms", "healthcare products"],
+    "avoid": ["casual consumer apps", "indie projects"],
+    "cssHints": "font-family: 'Merriweather', serif; color: #1e293b; background: #ffffff; border-bottom: 3px solid #1e40af;"
+  },
+  {
+    "name": "Storytelling-Driven",
+    "description": "Narrative-focused landing page that unfolds like a story through scroll, revealing problems, solutions, and outcomes in sequence.",
+    "useCases": ["brand campaigns", "nonprofit causes", "product origin stories"],
+    "avoid": ["utility tools", "quick-conversion funnels"],
+    "cssHints": "scroll-snap-type: y mandatory; .story-section { min-height: 100vh; scroll-snap-align: start; opacity: 0; transition: opacity 0.8s ease; }"
+  },
+  {
+    "name": "Data-Dense Dashboard",
+    "description": "Maximum information density dashboard with compact widgets, sparklines, micro-charts, and multi-panel layouts for power users.",
+    "useCases": ["analytics platforms", "DevOps monitoring", "trading terminals"],
+    "avoid": ["casual users", "mobile-first apps"],
+    "cssHints": "display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; font-size: 12px; background: #0f172a; color: #e2e8f0;"
+  },
+  {
+    "name": "Heat Map & Heatmap Style",
+    "description": "Color-intensity-based data visualization using thermal gradients from cool to hot colors to represent value density across areas.",
+    "useCases": ["user behavior analytics", "geographic data", "performance monitoring"],
+    "avoid": ["colorblind users without alternatives", "non-spatial data"],
+    "cssHints": "background: linear-gradient(90deg, #313695, #4575b4, #abd9e9, #fee090, #f46d43, #a50026); border-radius: 4px; .cell { opacity: var(--intensity); }"
+  },
+  {
+    "name": "Executive Dashboard",
+    "description": "High-level KPI dashboard with large metric cards, trend indicators, summary charts, and clean typography for decision-makers.",
+    "useCases": ["C-suite reporting", "board presentations", "business intelligence"],
+    "avoid": ["granular debugging", "real-time operations"],
+    "cssHints": ".kpi-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); } .metric { font-size: 3rem; font-weight: 200; }"
+  },
+  {
+    "name": "Real-Time Monitoring",
+    "description": "Live-updating dashboard with streaming data feeds, auto-refreshing charts, status indicators, and alert-driven visual hierarchy.",
+    "useCases": ["server monitoring", "IoT platforms", "live event tracking"],
+    "avoid": ["static reports", "offline-first apps"],
+    "cssHints": ".status-ok { color: #22c55e; } .status-warn { color: #eab308; } .status-error { color: #ef4444; animation: pulse 1s infinite; } font-family: 'JetBrains Mono', monospace;"
+  },
+  {
+    "name": "Drill-Down Analytics",
+    "description": "Hierarchical dashboard allowing progressive data exploration from overview to detail through clickable charts and expandable rows.",
+    "useCases": ["business intelligence", "analytics platforms", "audit tools"],
+    "avoid": ["quick-glance dashboards", "consumer products"],
+    "cssHints": ".breadcrumb { display: flex; gap: 0.5rem; color: #64748b; } .expandable-row { cursor: pointer; border-left: 3px solid transparent; &:hover { border-left-color: #3b82f6; } }"
+  },
+  {
+    "name": "Comparative Analysis Dashboard",
+    "description": "Side-by-side comparison layout with synchronized axes, difference highlighting, and benchmark overlays for multi-entity analysis.",
+    "useCases": ["competitive analysis", "A/B test results", "market research"],
+    "avoid": ["single-metric tracking", "simple status pages"],
+    "cssHints": "display: grid; grid-template-columns: 1fr 1fr; gap: 16px; .positive { background: #22c55e; } .negative { background: #ef4444; }"
+  },
+  {
+    "name": "Predictive Analytics",
+    "description": "Forward-looking dashboard with confidence intervals, trend projections, scenario modeling, and probability distribution visualizations.",
+    "useCases": ["demand forecasting", "risk assessment", "capacity planning"],
+    "avoid": ["historical-only reporting", "simple tracking"],
+    "cssHints": ".forecast-line { stroke-dasharray: 8 4; stroke: #8b5cf6; } .confidence-band { fill: rgba(139,92,246,0.15); } .scenario-toggle { border-radius: 9999px; padding: 0.25rem 1rem; }"
+  },
+  {
+    "name": "User Behavior Analytics",
+    "description": "User-centric dashboard with session recordings, funnel visualizations, cohort charts, and event timeline streams.",
+    "useCases": ["product analytics", "UX research", "marketing analytics"],
+    "avoid": ["infrastructure monitoring", "financial reporting"],
+    "cssHints": ".funnel-step { background: linear-gradient(90deg, #3b82f6, #60a5fa); clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); padding: 1rem 2rem; }"
+  },
+  {
+    "name": "Financial Dashboard",
+    "description": "Number-heavy dashboard with candlestick charts, P&L tables, currency formatting, and risk-aware color coding for financial data.",
+    "useCases": ["trading platforms", "accounting software", "investor reporting"],
+    "avoid": ["casual consumer apps", "creative projects"],
+    "cssHints": ".positive { color: #16a34a; } .negative { color: #dc2626; } font-variant-numeric: tabular-nums; font-family: 'IBM Plex Mono', monospace; text-align: right;"
+  },
+  {
+    "name": "Sales Intelligence Dashboard",
+    "description": "Revenue-focused dashboard with pipeline visualizations, quota tracking, lead scoring indicators, and territory performance maps.",
+    "useCases": ["CRM platforms", "sales team management", "revenue operations"],
+    "avoid": ["engineering metrics", "content analytics"],
+    "cssHints": ".pipeline-stage { display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem; border-left: 4px solid var(--stage-color); } .quota-bar { height: 8px; border-radius: 4px; background: #e2e8f0; }"
+  }
 ]

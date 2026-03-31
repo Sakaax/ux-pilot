@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Conversational UX designer with live preview — 376 rules, 4 phases, anti AI-slop",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "plugins": [
     {
       "name": "ux-pilot",
       "source": "./",
       "description": "Your UX co-pilot — from idea to validated flow, in your terminal. Conversational Discovery, UX Audit, Live Preview with named versions, Export to spec + framework components. 376 UX/SEO/conversion/psychology rules loaded on-demand.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Sakaax"
       },

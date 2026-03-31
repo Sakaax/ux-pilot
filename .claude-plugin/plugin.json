@@ -1,7 +1,7 @@
 {
   "name": "ux-pilot",
   "description": "UX co-pilot — conversational UX designer with live preview. 376 rules, 161 palettes, 57 font pairings, 67 styles. Phases: Discovery (ABCD questions), Audit (code scan + scored report), Preview (local server + named versions), Export (spec + React/Svelte/Vue components).",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Sakaax"
   },
