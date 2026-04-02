@@ -25,6 +25,12 @@
 
 A Claude Code plugin that acts as a **senior UX designer**. It doesn't generate code blindly — it understands your product, challenges your choices, shows you the result in a live browser preview, and helps you iterate until the flow is validated.
 
+## What's New (v0.1.2)
+
+- **HTML Audit Report** — audit results now open as a styled, navigable HTML page in your browser
+- **Fix Prompts** — each finding includes a ready-to-paste prompt to fix the issue in Claude Code
+- **Persistent UX Brief** — discovery saves `ux-pilot/ux-brief.md` in your project, updated as you go
+
 ## Why ux-pilot?
 
 Every AI tool generates the same generic output: Inter font, purple gradient on white, centered hero, done. **ux-pilot exists to fix this.**
@@ -73,7 +79,9 @@ The plugin asks you questions **one at a time** (ABCD choices + free text). It u
 
 - Adapts questions based on your answers — skips irrelevant ones
 - Goal: get to the Brief in **as few questions as possible**
-- Output: a structured **UX Brief**
+- Output: a structured **UX Brief** saved to `ux-pilot/ux-brief.md` in your project
+- Brief is updated as you make design decisions and validate screens
+- Auto-added to `.gitignore`
 
 ### 2. Audit
 
@@ -83,6 +91,8 @@ If you have existing code, the plugin scans it automatically:
 - Scans routes, HTML, forms, images, navigation, accessibility, SEO, mobile
 - Produces a **scored report** (XX/100) with findings by severity
 - Each finding references the violated rule and suggests a fix
+- **HTML report** opens in your browser — dark themed, grouped by severity
+- **Fix prompts** under each finding — ready to copy-paste into Claude Code to fix the issue
 
 ### 3. Preview
 

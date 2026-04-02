@@ -98,4 +98,72 @@ describe("CodeScanner", () => {
     expect(result.filesScanned).toBeGreaterThanOrEqual(1);
     expect(Array.isArray(result.findings)).toBe(true);
   });
+
+  test("every finding has a non-empty fixPrompt string", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head></head><body><h3>No H1</h3><img src="x.jpg"></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    expect(result.findings.length).toBeGreaterThan(0);
+    for (const finding of result.findings) {
+      expect(typeof finding.fixPrompt).toBe("string");
+      expect(finding.fixPrompt.length).toBeGreaterThan(0);
+    }
+  });
+
+  test("heading fixPrompt includes the file name", () => {
+    const dir = setupFiles({
+      "page.html": "<html><body><h1>Title</h1><h3>Skip h2</h3></body></html>",
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const headingIssue = result.findings.find((f) => f.category === "structure");
+    expect(headingIssue).toBeDefined();
+    expect(headingIssue!.fixPrompt).toContain("page.html");
+  });
+
+  test("missing alt fixPrompt includes the file name", () => {
+    const dir = setupFiles({
+      "gallery.html": '<html><body><img src="photo.jpg"></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const altIssue = result.findings.find((f) => f.category === "accessibility");
+    expect(altIssue).toBeDefined();
+    expect(altIssue!.fixPrompt).toContain("gallery.html");
+  });
+
+  test("missing label fixPrompt includes the file name", () => {
+    const dir = setupFiles({
+      "form.html": '<html><body><form><input type="text" name="email"></form></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const labelIssue = result.findings.find((f) => f.category === "forms");
+    expect(labelIssue).toBeDefined();
+    expect(labelIssue!.fixPrompt).toContain("form.html");
+  });
+
+  test("missing meta description fixPrompt includes the file name", () => {
+    const dir = setupFiles({
+      "landing.html": "<html><head><title>Test</title></head><body></body></html>",
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const metaIssue = result.findings.find((f) => f.category === "seo" && f.message.includes("description"));
+    expect(metaIssue).toBeDefined();
+    expect(metaIssue!.fixPrompt).toContain("landing.html");
+  });
+
+  test("missing viewport fixPrompt includes the file name", () => {
+    const dir = setupFiles({
+      "app.html": "<html><head></head><body></body></html>",
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const vpIssue = result.findings.find((f) => f.category === "mobile");
+    expect(vpIssue).toBeDefined();
+    expect(vpIssue!.fixPrompt).toContain("app.html");
+  });
 });

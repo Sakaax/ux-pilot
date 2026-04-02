@@ -10,6 +10,7 @@ export interface Finding {
   message: string;
   file: string;
   rule: string;
+  fixPrompt: string;
 }
 
 export interface ScanResult {
@@ -80,6 +81,7 @@ export class CodeScanner {
         message: "Missing H1 heading",
         file,
         rule: "seo-aeo/structure: H1 unique par page",
+        fixPrompt: `Add a single H1 heading to ${file} that describes the main content of the page.`,
       });
     } else if (h1Count > 1) {
       findings.push({
@@ -88,6 +90,7 @@ export class CodeScanner {
         message: `Multiple H1 headings found (${h1Count})`,
         file,
         rule: "seo-aeo/structure: H1 unique par page",
+        fixPrompt: `In ${file}, keep only one H1 heading that describes the main content and convert the other ${h1Count - 1} H1 tag(s) to H2 or lower.`,
       });
     }
 
@@ -100,6 +103,7 @@ export class CodeScanner {
           message: `Skipped heading level: H${levels[i - 1]} → H${levels[i]}`,
           file,
           rule: "seo-aeo/structure: Hierarchie H2-H6 logique",
+          fixPrompt: `In ${file}, fix the heading hierarchy so no levels are skipped. Change the H${levels[i]} to an H${levels[i - 1] + 1}, or add the missing intermediate heading levels between H${levels[i - 1]} and H${levels[i]}.`,
         });
         break;
       }
@@ -122,6 +126,7 @@ export class CodeScanner {
           message: "Image missing alt attribute",
           file,
           rule: "ux-patterns/accessibility: Alt descriptif pour les images",
+          fixPrompt: `In ${file}, add descriptive alt attributes to all img tags that are missing them. Each alt text should concisely describe the image content.`,
         });
       }
     }
@@ -149,6 +154,7 @@ export class CodeScanner {
             message: `Input "${idMatch[1]}" has no associated label`,
             file,
             rule: "ux-patterns/forms-feedback: Label visible par input",
+            fixPrompt: `In ${file}, add a <label for="${idMatch[1]}"> element before the input with id="${idMatch[1]}" that clearly describes what the user should enter.`,
           });
         }
       } else {
@@ -160,6 +166,7 @@ export class CodeScanner {
             message: "Input without id or wrapping label — missing label association",
             file,
             rule: "ux-patterns/forms-feedback: Label visible par input",
+            fixPrompt: `In ${file}, add an id attribute to each input that lacks one, then add a corresponding <label for="..."> element that describes the expected input.`,
           });
         }
       }
@@ -189,6 +196,7 @@ export class CodeScanner {
         message: "Missing meta description",
         file,
         rule: "seo-aeo/meta-og: Meta description < 160 caracteres",
+        fixPrompt: `In ${file}, add a <meta name="description" content="..."> tag inside <head> with a concise page summary under 160 characters.`,
       });
     }
 
@@ -199,6 +207,7 @@ export class CodeScanner {
         message: "Missing title tag",
         file,
         rule: "seo-aeo/meta-og: Title unique par page",
+        fixPrompt: `In ${file}, add a <title> tag inside <head> with a unique, descriptive page title under 60 characters.`,
       });
     }
 
@@ -217,6 +226,7 @@ export class CodeScanner {
         message: "Missing viewport meta tag",
         file,
         rule: "ux-patterns/layout-responsive: Viewport meta obligatoire",
+        fixPrompt: `In ${file}, add <meta name="viewport" content="width=device-width, initial-scale=1.0"> inside the <head> tag to enable responsive layout on mobile devices.`,
       });
     }
 

@@ -66,6 +66,7 @@ export function generateAuditReport(
   } else {
     for (const f of groups.critical) {
       lines.push(`- **${f.message}** — ${f.file} — Rule: ${f.rule}`);
+      lines.push(`  - Fix: \`${f.fixPrompt}\``);
     }
   }
   lines.push("");
@@ -78,6 +79,7 @@ export function generateAuditReport(
   } else {
     for (const f of groups.high) {
       lines.push(`- **${f.message}** — ${f.file} — Rule: ${f.rule}`);
+      lines.push(`  - Fix: \`${f.fixPrompt}\``);
     }
   }
   lines.push("");
@@ -90,6 +92,7 @@ export function generateAuditReport(
   } else {
     for (const f of groups.medium) {
       lines.push(`- ${f.message} — ${f.file} — Rule: ${f.rule}`);
+      lines.push(`  - Fix: \`${f.fixPrompt}\``);
     }
   }
   lines.push("");
@@ -102,6 +105,7 @@ export function generateAuditReport(
   } else {
     for (const f of groups.low) {
       lines.push(`- ${f.message} — ${f.file} — Rule: ${f.rule}`);
+      lines.push(`  - Fix: \`${f.fixPrompt}\``);
     }
   }
   lines.push("");

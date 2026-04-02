@@ -7,6 +7,7 @@ export { generateBrief } from "./discovery/brief-generator";
 export { detectFramework } from "./audit/framework-detector";
 export { CodeScanner } from "./audit/scanner";
 export { generateAuditReport } from "./audit/report-generator";
+export { generateHtmlAuditReport } from "./audit/html-report-generator";
 
 // Rules
 export { RulesLoader } from "./rules/loader";

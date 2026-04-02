@@ -5,11 +5,11 @@ import type { FrameworkInfo } from "../../src/audit/framework-detector";
 
 describe("Audit Report Generator", () => {
   const findings: Finding[] = [
-    { category: "accessibility", severity: "high", message: "Image missing alt", file: "index.html", rule: "accessibility" },
-    { category: "seo", severity: "high", message: "Missing meta description", file: "index.html", rule: "seo" },
-    { category: "mobile", severity: "critical", message: "Missing viewport", file: "index.html", rule: "mobile" },
-    { category: "structure", severity: "medium", message: "Skipped heading level", file: "index.html", rule: "structure" },
-    { category: "forms", severity: "low", message: "Missing helper text", file: "form.html", rule: "forms" },
+    { category: "accessibility", severity: "high", message: "Image missing alt", file: "index.html", rule: "accessibility", fixPrompt: "In index.html, add descriptive alt attributes to all img tags." },
+    { category: "seo", severity: "high", message: "Missing meta description", file: "index.html", rule: "seo", fixPrompt: 'In index.html, add a <meta name="description" content="..."> tag inside <head>.' },
+    { category: "mobile", severity: "critical", message: "Missing viewport", file: "index.html", rule: "mobile", fixPrompt: 'In index.html, add <meta name="viewport" content="width=device-width, initial-scale=1.0"> inside <head>.' },
+    { category: "structure", severity: "medium", message: "Skipped heading level", file: "index.html", rule: "structure", fixPrompt: "In index.html, fix the heading hierarchy so no levels are skipped." },
+    { category: "forms", severity: "low", message: "Missing helper text", file: "form.html", rule: "forms", fixPrompt: "In form.html, add helper text below each form input to guide the user." },
   ];
 
   const framework: FrameworkInfo = { name: "nextjs", version: "14.0.0", uiFramework: "tailwind" };
@@ -52,5 +52,12 @@ describe("Audit Report Generator", () => {
   test("handles empty findings", () => {
     const report = generateAuditReport([], framework, 3);
     expect(report).toContain("100/100");
+  });
+
+  test("includes fixPrompt for each finding in the report", () => {
+    const report = generateAuditReport(findings, framework, 5);
+    for (const finding of findings) {
+      expect(report).toContain(finding.fixPrompt);
+    }
   });
 });
