@@ -1,6 +1,6 @@
 {
   "name": "ux-pilot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Your UX co-pilot — from idea to validated flow, in your terminal.",
   "type": "module",
   "main": "dist/index.js",
