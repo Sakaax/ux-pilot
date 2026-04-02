@@ -230,6 +230,120 @@ export class CodeScanner {
       });
     }
 
+    findings.push(...this.checkMobileCSS(content, file));
+
+    return findings;
+  }
+
+  private checkMobileCSS(content: string, file: string): Finding[] {
+    const findings: Finding[] = [];
+
+    // Tables without responsive wrapper
+    if (/<table[\s>]/i.test(content) && !content.includes("overflow")) {
+      findings.push({
+        category: "mobile",
+        severity: "high",
+        message: "Table without responsive wrapper — will overflow on mobile",
+        file,
+        rule: "ux-patterns/layout-responsive: Tables doivent etre scrollables horizontalement sur mobile",
+        fixPrompt: `In ${file}, wrap each <table> in a container with overflow-x: auto to make tables scrollable on mobile devices.`,
+      });
+    }
+
+    // Fixed pixel widths in inline styles (> 500px)
+    const fixedWidthInline = /style\s*=\s*["'][^"']*?width\s*:\s*(\d+)px/gi;
+    let widthMatch = fixedWidthInline.exec(content);
+    while (widthMatch !== null) {
+      const px = parseInt(widthMatch[1]);
+      if (px > 500) {
+        findings.push({
+          category: "mobile",
+          severity: "high",
+          message: `Fixed width ${px}px found — will overflow on mobile screens`,
+          file,
+          rule: "ux-patterns/layout-responsive: Utiliser max-width ou pourcentages au lieu de largeurs fixes",
+          fixPrompt: `In ${file}, replace the fixed width: ${px}px with max-width: 100% or a responsive unit (%, vw) so it adapts to mobile screens.`,
+        });
+        break;
+      }
+      widthMatch = fixedWidthInline.exec(content);
+    }
+
+    // Fixed pixel widths in CSS blocks (> 500px) without media queries
+    const cssWidth = /\{[^}]*?width\s*:\s*(\d+)px/gi;
+    let cssMatch = cssWidth.exec(content);
+    while (cssMatch !== null) {
+      const px = parseInt(cssMatch[1]);
+      if (px > 500 && !content.includes("max-width") && !content.includes("@media")) {
+        findings.push({
+          category: "mobile",
+          severity: "high",
+          message: `CSS rule with fixed width ${px}px and no media query — will likely overflow on mobile`,
+          file,
+          rule: "ux-patterns/layout-responsive: Utiliser max-width ou pourcentages au lieu de largeurs fixes",
+          fixPrompt: `In ${file}, replace the fixed width: ${px}px with max-width: 100% or add a @media query to adjust it for mobile screens.`,
+        });
+        break;
+      }
+      cssMatch = cssWidth.exec(content);
+    }
+
+    // Small touch targets (buttons/links with width or height < 44px)
+    const touchTarget = /<(?:button|a)\s[^>]*style\s*=\s*["'][^"']*?(?:width|height)\s*:\s*(\d+)px/gi;
+    let touchMatch = touchTarget.exec(content);
+    while (touchMatch !== null) {
+      const px = parseInt(touchMatch[1]);
+      if (px < 44) {
+        findings.push({
+          category: "mobile",
+          severity: "medium",
+          message: `Touch target too small (${px}px) — minimum recommended is 44px`,
+          file,
+          rule: "ux-patterns/touch-interaction: Touch targets minimum 44x44px",
+          fixPrompt: `In ${file}, increase the button/link size to at least 44x44px for comfortable touch interaction on mobile devices.`,
+        });
+        break;
+      }
+      touchMatch = touchTarget.exec(content);
+    }
+
+    // Small font sizes (< 14px)
+    const fontSize = /font-size\s*:\s*(\d+)px/gi;
+    let fontMatch = fontSize.exec(content);
+    while (fontMatch !== null) {
+      const px = parseInt(fontMatch[1]);
+      if (px < 14 && px > 0) {
+        findings.push({
+          category: "mobile",
+          severity: "medium",
+          message: `Font size ${px}px is too small for mobile — minimum recommended is 14px`,
+          file,
+          rule: "ux-patterns/typography-color: Taille minimale lisible sur mobile",
+          fixPrompt: `In ${file}, increase the font-size from ${px}px to at least 14px (16px recommended) for readability on mobile devices.`,
+        });
+        break;
+      }
+      fontMatch = fontSize.exec(content);
+    }
+
+    // Nav/tabs with display:flex but no flex-wrap
+    const navFlex = /<nav\s[^>]*style\s*=\s*["'][^"']*display\s*:\s*flex[^"']*/gi;
+    let navMatch = navFlex.exec(content);
+    while (navMatch !== null) {
+      if (!navMatch[0].includes("flex-wrap")) {
+        findings.push({
+          category: "mobile",
+          severity: "high",
+          message: "Nav/tabs use display:flex without flex-wrap — items will overflow on mobile",
+          file,
+          rule: "ux-patterns/navigation: Navigation doit wrapper sur mobile",
+          fixPrompt: `In ${file}, add flex-wrap: wrap to the nav element's flex container so tabs/links wrap to the next line on small screens instead of overflowing.`,
+        });
+        break;
+      }
+      navMatch = navFlex.exec(content);
+    }
+
     return findings;
   }
 }

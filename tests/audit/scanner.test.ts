@@ -166,4 +166,97 @@ describe("CodeScanner", () => {
     expect(vpIssue).toBeDefined();
     expect(vpIssue!.fixPrompt).toContain("app.html");
   });
+
+  // ─── MOBILE CSS CHECKS ───
+
+  test("detects tables without responsive wrapper", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head><meta name="viewport" content="width=device-width"></head><body><table><tr><td>Data</td></tr></table></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const issue = result.findings.find((f) => f.category === "mobile" && f.message.toLowerCase().includes("table"));
+    expect(issue).toBeDefined();
+    expect(issue!.severity).toBe("high");
+    expect(issue!.fixPrompt.length).toBeGreaterThan(0);
+  });
+
+  test("detects fixed pixel widths without media queries", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head><meta name="viewport" content="width=device-width"></head><body><div style="width: 900px;">content</div></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const issue = result.findings.find((f) => f.category === "mobile" && f.message.toLowerCase().includes("fixed"));
+    expect(issue).toBeDefined();
+    expect(issue!.fixPrompt.length).toBeGreaterThan(0);
+  });
+
+  test("detects small touch targets", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head><meta name="viewport" content="width=device-width"></head><body><button style="width: 20px; height: 20px;">X</button></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const issue = result.findings.find((f) => f.category === "mobile" && f.message.toLowerCase().includes("touch"));
+    expect(issue).toBeDefined();
+    expect(issue!.fixPrompt.length).toBeGreaterThan(0);
+  });
+
+  test("detects small font sizes", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head><meta name="viewport" content="width=device-width"></head><body><p style="font-size: 10px;">tiny text</p></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const issue = result.findings.find((f) => f.category === "mobile" && f.message.toLowerCase().includes("font"));
+    expect(issue).toBeDefined();
+    expect(issue!.fixPrompt.length).toBeGreaterThan(0);
+  });
+
+  test("detects nav/tabs without flex-wrap", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head><meta name="viewport" content="width=device-width"></head><body><nav style="display: flex;"><a>Tab1</a><a>Tab2</a><a>Tab3</a><a>Tab4</a><a>Tab5</a><a>Tab6</a></nav></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const issue = result.findings.find((f) => f.category === "mobile" && f.message.toLowerCase().includes("nav"));
+    expect(issue).toBeDefined();
+    expect(issue!.fixPrompt.length).toBeGreaterThan(0);
+  });
+
+  test("detects overflow-x issues on containers", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head><meta name="viewport" content="width=device-width"><style>.wide { width: 1200px; }</style></head><body><div class="wide">overflow</div></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const issue = result.findings.find((f) => f.category === "mobile" && f.message.toLowerCase().includes("overflow"));
+    expect(issue).toBeDefined();
+    expect(issue!.fixPrompt.length).toBeGreaterThan(0);
+  });
+
+  test("no mobile CSS issues on well-formed responsive page", () => {
+    const dir = setupFiles({
+      "index.html": `<html><head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Good page">
+        <title>Good</title>
+        <style>
+          .container { max-width: 100%; }
+          nav { display: flex; flex-wrap: wrap; }
+          @media (max-width: 768px) { .container { padding: 1rem; } }
+        </style>
+      </head><body>
+        <h1>Title</h1>
+        <nav style="display: flex; flex-wrap: wrap;"><a>Home</a><a>About</a></nav>
+        <div class="container"><p style="font-size: 16px;">Good text</p></div>
+        <button style="width: 48px; height: 48px;">OK</button>
+      </body></html>`,
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const mobileIssues = result.findings.filter((f) => f.category === "mobile");
+    expect(mobileIssues.length).toBe(0);
+  });
 });
