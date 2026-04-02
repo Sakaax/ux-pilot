@@ -31,6 +31,8 @@ A Claude Code plugin that acts as a **senior UX designer**. It doesn't generate 
 - **Fix Prompts** — each finding includes a ready-to-paste prompt to fix the issue in Claude Code
 - **Persistent UX Brief** — discovery saves `ux-pilot/ux-brief.md` in your project, updated as you go
 
+> Having issues updating? See [Troubleshooting](#troubleshooting).
+
 ## Why ux-pilot?
 
 Every AI tool generates the same generic output: Inter font, purple gradient on white, centered hero, done. **ux-pilot exists to fix this.**
@@ -209,6 +211,10 @@ ux-pilot/
 | **GitHub** | [github.com/Sakaax/ux-pilot](https://github.com/Sakaax/ux-pilot) |
 
 ## Troubleshooting
+
+### How to check your version
+
+Run `/plugin` in Claude Code and look for `ux-pilot`. The current version should be **0.1.1**. If you see an older version (e.g. `0.1.0`), follow the steps below.
 
 ### "Unknown skill: ux-pilot"
 
