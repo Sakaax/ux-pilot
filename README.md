@@ -208,6 +208,54 @@ ux-pilot/
 | **Twitter** | [@sakaaxx](https://twitter.com/sakaaxx) |
 | **GitHub** | [github.com/Sakaax/ux-pilot](https://github.com/Sakaax/ux-pilot) |
 
+## Troubleshooting
+
+### "Unknown skill: ux-pilot"
+
+The skill isn't installed. Run:
+
+```bash
+/plugin marketplace add Sakaax/ux-pilot
+/plugin install ux-pilot@ux-pilot
+/reload-plugins
+```
+
+### Plugin shows old version / features not working
+
+Claude Code caches plugins aggressively. To force a clean reinstall:
+
+1. **Quit Claude Code completely**
+2. Delete the cache:
+   ```bash
+   rm -rf ~/.claude/plugins/cache/ux-pilot
+   ```
+3. **Relaunch Claude Code**
+4. Reinstall:
+   ```bash
+   /plugin marketplace add Sakaax/ux-pilot
+   /plugin marketplace update ux-pilot
+   /plugin install ux-pilot@ux-pilot
+   /reload-plugins
+   ```
+
+> This is a known Claude Code plugin cache issue, not specific to ux-pilot.
+
+### "ux-pilot is already at the latest version"
+
+Same cache issue. Follow the steps above — the `rm -rf` of the cache folder is the key step.
+
+### Audit report doesn't open in browser
+
+The HTML report is saved to `ux-pilot/audit-report.html` in your project root. If it doesn't auto-open:
+
+- **Linux**: `xdg-open ux-pilot/audit-report.html`
+- **macOS**: `open ux-pilot/audit-report.html`
+- **Windows**: `start ux-pilot/audit-report.html`
+
+### Brief file not saved
+
+Make sure you validated the brief when prompted. The file is saved to `ux-pilot/ux-brief.md` in your project root. The `ux-pilot/` directory is auto-added to `.gitignore`.
+
 ## Credits
 
 Rules enriched from:
