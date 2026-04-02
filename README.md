@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://github.com/Sakaax/ux-pilot/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
   <a href="https://github.com/Sakaax/ux-pilot"><img src="https://img.shields.io/github/stars/Sakaax/ux-pilot?style=social" alt="GitHub Stars"></a>
-  <img src="https://img.shields.io/badge/Product%20Hunt-Launching%20April%202-orange" alt="Product Hunt — Launching April 2">
+  <a href="https://www.producthunt.com/posts/ux-pilot-2"><img src="https://img.shields.io/badge/Product%20Hunt-Live%20Now-orange" alt="Product Hunt"></a>
   <a href="https://ux-pilot.sakaax.com"><img src="https://img.shields.io/badge/Landing-ux--pilot.sakaax.com-D4622A" alt="Landing Page"></a>
 </p>
 
@@ -194,7 +194,7 @@ ux-pilot/
 |---|---|
 | **Landing page** | [ux-pilot.sakaax.com](https://ux-pilot.sakaax.com) |
 | **Interactive demo** | [ux-pilot.sakaax.com/demo](https://ux-pilot.sakaax.com/demo.html) |
-| **Product Hunt** | Launching April 2 |
+| **Product Hunt** | [Live on Product Hunt](https://www.producthunt.com/posts/ux-pilot-2) |
 | **Twitter** | [@sakaaxx](https://twitter.com/sakaaxx) |
 | **GitHub** | [github.com/Sakaax/ux-pilot](https://github.com/Sakaax/ux-pilot) |
 
