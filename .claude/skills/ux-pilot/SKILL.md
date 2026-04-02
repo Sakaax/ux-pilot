@@ -119,3 +119,4 @@ After scanning, ALWAYS generate an HTML report:
 - Using V1/V2/V3 instead of descriptive version names
 - Outputting audit results only in the terminal without the HTML report
 - Not saving the brief to disk after discovery
+- Using emojis as icons — ALWAYS use inline SVG icons instead. Emojis render differently across OS/browsers and look unprofessional. Use simple SVG paths for icons (arrows, bells, users, checkmarks, etc.)
