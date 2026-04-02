@@ -170,9 +170,34 @@ describe("HTML Audit Report Generator", () => {
 
   test("uses dark theme with ux-pilot branding", () => {
     const html = generateHtmlAuditReport(makeFindings(), framework, 10);
-    // Background color #0F0E0C
     expect(html).toContain("#0F0E0C");
-    // Accent color #D4622A
     expect(html).toContain("#D4622A");
+  });
+
+  test("shows total corrections count at the top", () => {
+    const findings = makeFindings();
+    const html = generateHtmlAuditReport(findings, framework, 10);
+    expect(html).toContain(`${findings.length} corrections`);
+  });
+
+  test("findings have numbered indices like 1/5, 2/5", () => {
+    const findings = makeFindings();
+    const html = generateHtmlAuditReport(findings, framework, 10);
+    expect(html).toContain(`1/${findings.length}`);
+    expect(html).toContain(`2/${findings.length}`);
+    expect(html).toContain(`${findings.length}/${findings.length}`);
+  });
+
+  test("fix prompts are natural language instructions not raw code", () => {
+    const findings = makeFindings();
+    const html = generateHtmlAuditReport(findings, framework, 10);
+    // Should contain "Paste this into Claude Code" or similar instruction prefix
+    expect(html.toLowerCase()).toContain("paste");
+  });
+
+  test("has a back to top link at the bottom", () => {
+    const html = generateHtmlAuditReport(makeFindings(), framework, 10);
+    expect(html).toContain("#top");
+    expect(html.toLowerCase()).toContain("back to top");
   });
 });

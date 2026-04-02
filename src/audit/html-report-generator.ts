@@ -76,13 +76,14 @@ function getScoreColor(score: number): string {
   return "#EF4444";
 }
 
-function renderFinding(finding: Finding, index: number): string {
+function renderFinding(finding: Finding, index: number, total: number): string {
   const colors = SEVERITY_COLORS[finding.severity];
   const escapedFixPrompt = escapeHtml(finding.fixPrompt);
 
   return `
     <div class="finding" style="border-left: 3px solid ${colors.border}; background: ${colors.bg};">
       <div class="finding-header">
+        <span class="finding-index">${index + 1}/${total}</span>
         <span class="severity-badge severity-${finding.severity}" style="color: ${colors.text}; border-color: ${colors.border};">
           ${SEVERITY_LABELS[finding.severity]}
         </span>
@@ -92,7 +93,7 @@ function renderFinding(finding: Finding, index: number): string {
       <p class="finding-rule"><strong>Rule:</strong> ${escapeHtml(finding.rule)}</p>
       <div class="fix-prompt-block">
         <div class="fix-prompt-header">
-          <span class="fix-prompt-label">Fix Prompt</span>
+          <span class="fix-prompt-label">Paste this into Claude Code to fix</span>
           <button class="copy-btn" data-prompt-id="prompt-${index}" onclick="copyPrompt(this, 'prompt-${index}')">
             Copy
           </button>
@@ -102,7 +103,7 @@ function renderFinding(finding: Finding, index: number): string {
     </div>`;
 }
 
-function renderSeveritySection(severity: Severity, findings: readonly Finding[], startIndex: number): string {
+function renderSeveritySection(severity: Severity, findings: readonly Finding[], startIndex: number, totalFindings: number): string {
   const colors = SEVERITY_COLORS[severity];
   const label = SEVERITY_LABELS[severity];
 
@@ -114,7 +115,7 @@ function renderSeveritySection(severity: Severity, findings: readonly Finding[],
       </h2>
       ${findings.length === 0
         ? '<p class="no-findings">No issues found.</p>'
-        : findings.map((f, i) => renderFinding(f, startIndex + i)).join("\n")}
+        : findings.map((f, i) => renderFinding(f, startIndex + i, totalFindings)).join("\n")}
     </section>`;
 }
 
@@ -162,9 +163,10 @@ export function generateHtmlAuditReport(
   const groups = groupBySeverity(findings);
   const dateStr = new Date().toISOString().split("T")[0];
 
+  const totalFindings = findings.length;
   let findingIndex = 0;
   const severitySections = SEVERITY_ORDER.map((sev) => {
-    const section = renderSeveritySection(sev, groups[sev], findingIndex);
+    const section = renderSeveritySection(sev, groups[sev], findingIndex, totalFindings);
     findingIndex += groups[sev].length;
     return section;
   }).join("\n");
@@ -257,6 +259,40 @@ export function generateHtmlAuditReport(
       font-size: 0.875rem;
       color: #8A8279;
       margin-top: 0.25rem;
+    }
+
+    .corrections-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #D4622A;
+      margin-top: 0.5rem;
+    }
+
+    .finding-index {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #8A8279;
+      background: #12110F;
+      padding: 0.125rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .back-to-top {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #2A2723;
+    }
+
+    .back-to-top a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      color: #D4622A;
+      text-decoration: none;
+    }
+
+    .back-to-top a:hover {
+      text-decoration: underline;
     }
 
     /* Severity sections */
@@ -458,7 +494,7 @@ export function generateHtmlAuditReport(
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="top">
     <header class="report-header">
       <h1>UX Pilot Audit Report</h1>
       <p class="report-meta">
@@ -475,12 +511,17 @@ export function generateHtmlAuditReport(
           ${score} / 100
         </div>
         <p class="score-label">Overall UX Score</p>
+        <p class="corrections-total">${totalFindings} corrections</p>
       </div>
     </div>
 
     ${severitySections}
 
     ${renderSummary(findings)}
+
+    <div class="back-to-top">
+      <a href="#top">Back to top</a>
+    </div>
   </div>
 
   <script>
