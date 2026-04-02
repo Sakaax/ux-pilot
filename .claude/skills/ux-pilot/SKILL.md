@@ -42,6 +42,29 @@ When the brief is validated by the user:
 - Each finding references the violated rule and suggests a fix
 - Each finding includes a **fixPrompt** — a ready-to-paste prompt the user can copy into Claude Code to fix the issue
 
+#### Visual Audit with Playwright (if available)
+Before running the static scanner, check if Playwright MCP tools are available (browser_navigate, browser_take_screenshot, browser_resize). If they are:
+
+1. Launch the project's dev server (or open the HTML file directly)
+2. Capture screenshots at 3 breakpoints:
+   - **Mobile**: 375px width
+   - **Tablet**: 768px width
+   - **Desktop**: 1280px width
+3. Analyze each screenshot visually for:
+   - Elements overflowing the viewport
+   - Text too small to read
+   - Touch targets too close together
+   - Navigation items that don't fit
+   - Overlapping elements
+   - Horizontal scroll bars
+4. Include visual findings in the audit report alongside static scanner findings
+5. Reference the specific breakpoint and describe what you see
+6. Save screenshots to `ux-pilot/screenshots/` for reference
+
+If Playwright is NOT available:
+- Fall back to static CSS analysis only (the default scanner)
+- Add a note in the report: "Visual audit unavailable — install Playwright MCP for screenshot-based analysis"
+
 #### HTML Report (MANDATORY)
 After scanning, ALWAYS generate an HTML report:
 1. Call `generateHtmlAuditReport(findings, framework, filesScanned)` to produce a self-contained HTML file
