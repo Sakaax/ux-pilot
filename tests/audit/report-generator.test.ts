@@ -60,4 +60,49 @@ describe("Audit Report Generator", () => {
       expect(report).toContain(finding.fixPrompt);
     }
   });
+
+  test("mobile findings should produce a lower score than non-mobile findings of the same severity and count", () => {
+    const mobileFindings: Finding[] = [
+      { category: "mobile", severity: "high", message: "No responsive layout", file: "app.tsx", rule: "mobile", fixPrompt: "Add responsive layout." },
+      { category: "mobile", severity: "high", message: "Touch targets too small", file: "nav.tsx", rule: "mobile", fixPrompt: "Increase touch targets." },
+      { category: "mobile", severity: "high", message: "Text too small on mobile", file: "page.tsx", rule: "mobile", fixPrompt: "Increase font size." },
+    ];
+
+    const nonMobileFindings: Finding[] = [
+      { category: "accessibility", severity: "high", message: "Missing alt text", file: "app.tsx", rule: "accessibility", fixPrompt: "Add alt text." },
+      { category: "accessibility", severity: "high", message: "Low contrast", file: "nav.tsx", rule: "accessibility", fixPrompt: "Increase contrast." },
+      { category: "accessibility", severity: "high", message: "Missing label", file: "page.tsx", rule: "accessibility", fixPrompt: "Add label." },
+    ];
+
+    const filesScanned = 10;
+    const mobileReport = generateAuditReport(mobileFindings, framework, filesScanned);
+    const nonMobileReport = generateAuditReport(nonMobileFindings, framework, filesScanned);
+
+    const mobileScore = parseInt(mobileReport.match(/Score global : (\d+)\/100/)![1]);
+    const nonMobileScore = parseInt(nonMobileReport.match(/Score global : (\d+)\/100/)![1]);
+
+    expect(mobileScore).toBeLessThan(nonMobileScore);
+  });
+
+  test("mobile severity multiplier of 1.5x is applied correctly", () => {
+    const mobileCritical: Finding[] = [
+      { category: "mobile", severity: "critical", message: "Missing viewport", file: "index.html", rule: "mobile", fixPrompt: "Add viewport meta." },
+    ];
+
+    const nonMobileCritical: Finding[] = [
+      { category: "accessibility", severity: "critical", message: "Missing landmark", file: "index.html", rule: "accessibility", fixPrompt: "Add landmark." },
+    ];
+
+    const filesScanned = 10;
+    const mobileReport = generateAuditReport(mobileCritical, framework, filesScanned);
+    const nonMobileReport = generateAuditReport(nonMobileCritical, framework, filesScanned);
+
+    const mobileScore = parseInt(mobileReport.match(/Score global : (\d+)\/100/)![1]);
+    const nonMobileScore = parseInt(nonMobileReport.match(/Score global : (\d+)\/100/)![1]);
+
+    // mobile critical penalty = 15 * 1.5 = 22.5 → score = round(100 - (22.5/300)*100) = 93
+    // non-mobile critical penalty = 15 → score = round(100 - (15/300)*100) = 95
+    expect(mobileScore).toBe(93);
+    expect(nonMobileScore).toBe(95);
+  });
 });

@@ -11,6 +11,7 @@ export interface Finding {
   file: string;
   rule: string;
   fixPrompt: string;
+  screenshot?: string;
 }
 
 export interface ScanResult {
@@ -81,7 +82,7 @@ export class CodeScanner {
         message: "Missing H1 heading",
         file,
         rule: "seo-aeo/structure: H1 unique par page",
-        fixPrompt: `Add a single H1 heading to ${file} that describes the main content of the page.`,
+        fixPrompt: `Fix the page structure in ${file} — add a single main heading (H1) that clearly describes what the page is about.`,
       });
     } else if (h1Count > 1) {
       findings.push({
@@ -90,7 +91,7 @@ export class CodeScanner {
         message: `Multiple H1 headings found (${h1Count})`,
         file,
         rule: "seo-aeo/structure: H1 unique par page",
-        fixPrompt: `In ${file}, keep only one H1 heading that describes the main content and convert the other ${h1Count - 1} H1 tag(s) to H2 or lower.`,
+        fixPrompt: `Fix the heading structure in ${file} — keep only one main heading and convert the other ${h1Count - 1} duplicate main heading(s) to subheadings (H2 or lower).`,
       });
     }
 
@@ -103,7 +104,7 @@ export class CodeScanner {
           message: `Skipped heading level: H${levels[i - 1]} → H${levels[i]}`,
           file,
           rule: "seo-aeo/structure: Hierarchie H2-H6 logique",
-          fixPrompt: `In ${file}, fix the heading hierarchy so no levels are skipped. Change the H${levels[i]} to an H${levels[i - 1] + 1}, or add the missing intermediate heading levels between H${levels[i - 1]} and H${levels[i]}.`,
+          fixPrompt: `Fix the heading hierarchy in ${file} — headings jump from level ${levels[i - 1]} to level ${levels[i]}, skipping a level. Change the heading to level ${levels[i - 1] + 1} or add the missing intermediate levels so the outline flows logically.`,
         });
         break;
       }
@@ -126,7 +127,7 @@ export class CodeScanner {
           message: "Image missing alt attribute",
           file,
           rule: "ux-patterns/accessibility: Alt descriptif pour les images",
-          fixPrompt: `In ${file}, add descriptive alt attributes to all img tags that are missing them. Each alt text should concisely describe the image content.`,
+          fixPrompt: `Fix accessibility in ${file} — add alt text descriptions to all images so screen readers can describe them. Each alt text should concisely explain what the image shows.`,
         });
       }
     }
@@ -154,7 +155,7 @@ export class CodeScanner {
             message: `Input "${idMatch[1]}" has no associated label`,
             file,
             rule: "ux-patterns/forms-feedback: Label visible par input",
-            fixPrompt: `In ${file}, add a <label for="${idMatch[1]}"> element before the input with id="${idMatch[1]}" that clearly describes what the user should enter.`,
+            fixPrompt: `Fix form accessibility in ${file} — add a visible label for the "${idMatch[1]}" input field that clearly describes what the user should enter.`,
           });
         }
       } else {
@@ -166,7 +167,7 @@ export class CodeScanner {
             message: "Input without id or wrapping label — missing label association",
             file,
             rule: "ux-patterns/forms-feedback: Label visible par input",
-            fixPrompt: `In ${file}, add an id attribute to each input that lacks one, then add a corresponding <label for="..."> element that describes the expected input.`,
+            fixPrompt: `Fix form accessibility in ${file} — every input field needs a visible label that tells users what to type. Add a label to each input that is missing one.`,
           });
         }
       }
@@ -196,7 +197,7 @@ export class CodeScanner {
         message: "Missing meta description",
         file,
         rule: "seo-aeo/meta-og: Meta description < 160 caracteres",
-        fixPrompt: `In ${file}, add a <meta name="description" content="..."> tag inside <head> with a concise page summary under 160 characters.`,
+        fixPrompt: `Fix SEO in ${file} — add a meta description tag with a concise page summary under 160 characters so search engines can display a useful snippet.`,
       });
     }
 
@@ -207,7 +208,7 @@ export class CodeScanner {
         message: "Missing title tag",
         file,
         rule: "seo-aeo/meta-og: Title unique par page",
-        fixPrompt: `In ${file}, add a <title> tag inside <head> with a unique, descriptive page title under 60 characters.`,
+        fixPrompt: `Fix SEO in ${file} — add a page title (under 60 characters) that uniquely describes what this page is about. It shows in browser tabs and search results.`,
       });
     }
 
@@ -226,7 +227,7 @@ export class CodeScanner {
         message: "Missing viewport meta tag",
         file,
         rule: "ux-patterns/layout-responsive: Viewport meta obligatoire",
-        fixPrompt: `In ${file}, add <meta name="viewport" content="width=device-width, initial-scale=1.0"> inside the <head> tag to enable responsive layout on mobile devices.`,
+        fixPrompt: `Fix the mobile layout in ${file} — add a viewport meta tag so the page scales correctly on phones and tablets.`,
       });
     }
 
@@ -246,7 +247,7 @@ export class CodeScanner {
         message: "Table without responsive wrapper — will overflow on mobile",
         file,
         rule: "ux-patterns/layout-responsive: Tables doivent etre scrollables horizontalement sur mobile",
-        fixPrompt: `In ${file}, wrap each <table> in a container with overflow-x: auto to make tables scrollable on mobile devices.`,
+        fixPrompt: `Fix the mobile layout in ${file} — wrap each table in a scrollable container so it does not overflow the screen on phones. Users should be able to scroll sideways to see all columns.`,
       });
     }
 
@@ -262,7 +263,7 @@ export class CodeScanner {
           message: `Fixed width ${px}px found — will overflow on mobile screens`,
           file,
           rule: "ux-patterns/layout-responsive: Utiliser max-width ou pourcentages au lieu de largeurs fixes",
-          fixPrompt: `In ${file}, replace the fixed width: ${px}px with max-width: 100% or a responsive unit (%, vw) so it adapts to mobile screens.`,
+          fixPrompt: `Fix the mobile layout in ${file} — replace the fixed ${px}px width with a flexible width (like a percentage or max-width) so the element adapts to smaller screens instead of overflowing.`,
         });
         break;
       }
@@ -281,7 +282,7 @@ export class CodeScanner {
           message: `CSS rule with fixed width ${px}px and no media query — will likely overflow on mobile`,
           file,
           rule: "ux-patterns/layout-responsive: Utiliser max-width ou pourcentages au lieu de largeurs fixes",
-          fixPrompt: `In ${file}, replace the fixed width: ${px}px with max-width: 100% or add a @media query to adjust it for mobile screens.`,
+          fixPrompt: `Fix the mobile layout in ${file} — a CSS rule sets a fixed ${px}px width with no responsive fallback. Replace it with a flexible width or add a media query so it adapts to smaller screens.`,
         });
         break;
       }
@@ -300,7 +301,7 @@ export class CodeScanner {
           message: `Touch target too small (${px}px) — minimum recommended is 44px`,
           file,
           rule: "ux-patterns/touch-interaction: Touch targets minimum 44x44px",
-          fixPrompt: `In ${file}, increase the button/link size to at least 44x44px for comfortable touch interaction on mobile devices.`,
+          fixPrompt: `Fix touch targets in ${file} — increase the button or link size to at least 44x44 pixels so users can tap it comfortably on a phone without hitting the wrong thing.`,
         });
         break;
       }
@@ -319,7 +320,7 @@ export class CodeScanner {
           message: `Font size ${px}px is too small for mobile — minimum recommended is 14px`,
           file,
           rule: "ux-patterns/typography-color: Taille minimale lisible sur mobile",
-          fixPrompt: `In ${file}, increase the font-size from ${px}px to at least 14px (16px recommended) for readability on mobile devices.`,
+          fixPrompt: `Fix readability in ${file} — increase the font size from ${px}px to at least 14px (16px recommended) so the text is easy to read on mobile screens without zooming.`,
         });
         break;
       }
@@ -337,7 +338,7 @@ export class CodeScanner {
           message: "Nav/tabs use display:flex without flex-wrap — items will overflow on mobile",
           file,
           rule: "ux-patterns/navigation: Navigation doit wrapper sur mobile",
-          fixPrompt: `In ${file}, add flex-wrap: wrap to the nav element's flex container so tabs/links wrap to the next line on small screens instead of overflowing.`,
+          fixPrompt: `Fix the navigation in ${file} — make sure the nav links wrap to the next line on small screens instead of overflowing off the edge. Add flex-wrap so items stack when space runs out.`,
         });
         break;
       }

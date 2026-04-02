@@ -8,11 +8,17 @@ const SEVERITY_WEIGHT: Record<Severity, number> = {
   low: 1,
 };
 
+const MOBILE_SEVERITY_MULTIPLIER = 1.5;
+
 function calculateScore(findings: Finding[], filesScanned: number): number {
   if (filesScanned === 0) return 100;
 
   const totalPenalty = findings.reduce(
-    (sum, f) => sum + SEVERITY_WEIGHT[f.severity],
+    (sum, f) => {
+      const weight = SEVERITY_WEIGHT[f.severity];
+      const multiplier = f.category === "mobile" ? MOBILE_SEVERITY_MULTIPLIER : 1;
+      return sum + weight * multiplier;
+    },
     0
   );
 

@@ -8,6 +8,8 @@ const SEVERITY_WEIGHT: Record<Severity, number> = {
   low: 1,
 };
 
+const MOBILE_SEVERITY_MULTIPLIER = 1.5;
+
 const SEVERITY_ORDER: readonly Severity[] = ["critical", "high", "medium", "low"] as const;
 
 const SEVERITY_COLORS: Record<Severity, { bg: string; text: string; border: string }> = {
@@ -28,7 +30,11 @@ function calculateScore(findings: readonly Finding[], filesScanned: number): num
   if (filesScanned === 0) return 100;
 
   const totalPenalty = findings.reduce(
-    (sum, f) => sum + SEVERITY_WEIGHT[f.severity],
+    (sum, f) => {
+      const weight = SEVERITY_WEIGHT[f.severity];
+      const multiplier = f.category === "mobile" ? MOBILE_SEVERITY_MULTIPLIER : 1;
+      return sum + weight * multiplier;
+    },
     0,
   );
 
@@ -76,6 +82,20 @@ function getScoreColor(score: number): string {
   return "#EF4444";
 }
 
+function renderScreenshot(finding: Finding): string {
+  if (!finding.screenshot) return "";
+
+  const escapedPath = escapeHtml(finding.screenshot);
+  const colors = SEVERITY_COLORS[finding.severity];
+
+  return `
+      <div class="finding-screenshot">
+        <a href="${escapedPath}" target="_blank" rel="noopener noreferrer">
+          <img src="${escapedPath}" alt="Screenshot for: ${escapeHtml(finding.message)}" style="max-height: 200px; border-radius: 8px; border: 1px solid ${colors.border}; cursor: pointer;">
+        </a>
+      </div>`;
+}
+
 function renderFinding(finding: Finding, index: number, total: number): string {
   const colors = SEVERITY_COLORS[finding.severity];
   const escapedFixPrompt = escapeHtml(finding.fixPrompt);
@@ -90,7 +110,7 @@ function renderFinding(finding: Finding, index: number, total: number): string {
         <span class="finding-file">${escapeHtml(finding.file)}</span>
       </div>
       <p class="finding-message">${escapeHtml(finding.message)}</p>
-      <p class="finding-rule"><strong>Rule:</strong> ${escapeHtml(finding.rule)}</p>
+      <p class="finding-rule"><strong>Rule:</strong> ${escapeHtml(finding.rule)}</p>${renderScreenshot(finding)}
       <div class="fix-prompt-block">
         <div class="fix-prompt-header">
           <span class="fix-prompt-label">Paste this into Claude Code to fix</span>

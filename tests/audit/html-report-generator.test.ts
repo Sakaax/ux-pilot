@@ -200,4 +200,124 @@ describe("HTML Audit Report Generator", () => {
     expect(html).toContain("#top");
     expect(html.toLowerCase()).toContain("back to top");
   });
+
+  test("renders an img tag when a finding has a screenshot path", () => {
+    const findings: Finding[] = [
+      {
+        category: "mobile",
+        severity: "critical",
+        message: "Missing viewport meta tag",
+        file: "index.html",
+        rule: "ux-patterns/layout-responsive: Viewport meta obligatoire",
+        fixPrompt: "Add viewport meta tag",
+        screenshot: "screenshots/viewport-issue.png",
+      },
+    ];
+    const html = generateHtmlAuditReport(findings, framework, 5);
+    expect(html).toContain("<img");
+    expect(html).toContain("screenshots/viewport-issue.png");
+  });
+
+  test("does not render an img tag when a finding has no screenshot", () => {
+    const findings: Finding[] = [
+      {
+        category: "accessibility",
+        severity: "high",
+        message: "Image missing alt attribute",
+        file: "gallery.html",
+        rule: "ux-patterns/accessibility: Alt descriptif",
+        fixPrompt: "Add alt attribute",
+      },
+    ];
+    const html = generateHtmlAuditReport(findings, framework, 5);
+    // Extract the finding card content between <div class="finding" and the next severity-section or summary
+    const findingStart = html.indexOf('<div class="finding"');
+    const fixPromptEnd = html.indexOf("</pre>", findingStart);
+    expect(findingStart).toBeGreaterThan(-1);
+    expect(fixPromptEnd).toBeGreaterThan(-1);
+    const findingHtml = html.substring(findingStart, fixPromptEnd);
+    expect(findingHtml).not.toContain("<img");
+  });
+
+  test("does not render an img tag when screenshot is an empty string", () => {
+    const findings: Finding[] = [
+      {
+        category: "structure",
+        severity: "medium",
+        message: "Skipped heading level",
+        file: "about.html",
+        rule: "seo-aeo/structure: Hierarchie",
+        fixPrompt: "Fix heading hierarchy",
+        screenshot: "",
+      },
+    ];
+    const html = generateHtmlAuditReport(findings, framework, 5);
+    const findingStart = html.indexOf('<div class="finding"');
+    const fixPromptEnd = html.indexOf("</pre>", findingStart);
+    expect(findingStart).toBeGreaterThan(-1);
+    expect(fixPromptEnd).toBeGreaterThan(-1);
+    const findingHtml = html.substring(findingStart, fixPromptEnd);
+    expect(findingHtml).not.toContain("<img");
+  });
+
+  test("screenshot thumbnail has max-height 200px styling", () => {
+    const findings: Finding[] = [
+      {
+        category: "mobile",
+        severity: "critical",
+        message: "Missing viewport meta tag",
+        file: "index.html",
+        rule: "ux-patterns/layout-responsive: Viewport meta obligatoire",
+        fixPrompt: "Add viewport meta tag",
+        screenshot: "screenshots/viewport-issue.png",
+      },
+    ];
+    const html = generateHtmlAuditReport(findings, framework, 5);
+    // The img should have max-height: 200px in its inline style
+    const imgMatch = html.match(/<img[^>]*screenshots\/viewport-issue\.png[^>]*>/);
+    expect(imgMatch).not.toBeNull();
+    expect(imgMatch![0]).toContain("max-height");
+    expect(imgMatch![0]).toContain("200px");
+  });
+
+  test("screenshot is placed between the message and the fix prompt block", () => {
+    const findings: Finding[] = [
+      {
+        category: "mobile",
+        severity: "critical",
+        message: "Missing viewport meta tag",
+        file: "index.html",
+        rule: "ux-patterns/layout-responsive: Viewport meta obligatoire",
+        fixPrompt: "Add viewport meta tag",
+        screenshot: "screenshots/viewport-issue.png",
+      },
+    ];
+    const html = generateHtmlAuditReport(findings, framework, 5);
+    // Search within the finding card only (after the finding div starts)
+    const findingStart = html.indexOf('<div class="finding"');
+    const findingHtml = html.substring(findingStart);
+    const imgIdx = findingHtml.indexOf("screenshots/viewport-issue.png");
+    const ruleIdx = findingHtml.indexOf("ux-patterns/layout-responsive");
+    const fixPromptIdx = findingHtml.indexOf('class="fix-prompt-block"');
+    expect(imgIdx).toBeGreaterThan(ruleIdx);
+    expect(imgIdx).toBeLessThan(fixPromptIdx);
+  });
+
+  test("screenshot img is wrapped in a link that opens in a new tab", () => {
+    const findings: Finding[] = [
+      {
+        category: "mobile",
+        severity: "critical",
+        message: "Missing viewport meta tag",
+        file: "index.html",
+        rule: "ux-patterns/layout-responsive: Viewport meta obligatoire",
+        fixPrompt: "Add viewport meta tag",
+        screenshot: "screenshots/viewport-issue.png",
+      },
+    ];
+    const html = generateHtmlAuditReport(findings, framework, 5);
+    // Should have an anchor with target="_blank" wrapping the img
+    expect(html).toContain('href="screenshots/viewport-issue.png"');
+    expect(html).toContain('target="_blank"');
+  });
 });

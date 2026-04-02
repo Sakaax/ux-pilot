@@ -236,6 +236,80 @@ describe("CodeScanner", () => {
     expect(issue!.fixPrompt.length).toBeGreaterThan(0);
   });
 
+  // ─── NATURAL LANGUAGE FIX PROMPTS ───
+
+  test("all fixPrompts are natural language — no HTML tags", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head></head><body><h3>No H1</h3><img src="x.jpg"><form><input type="text" name="email"></form></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    expect(result.findings.length).toBeGreaterThan(0);
+    for (const finding of result.findings) {
+      expect(finding.fixPrompt).not.toMatch(/<[a-zA-Z][^>]*>/);
+      expect(finding.fixPrompt).not.toContain("<");
+      expect(finding.fixPrompt).not.toContain(">");
+    }
+  });
+
+  test("fixPrompts contain action-oriented natural language words", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head></head><body><h3>No H1</h3><img src="x.jpg"><form><input type="text" name="email"></form></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    expect(result.findings.length).toBeGreaterThan(0);
+    const actionWords = /\b(fix|add|change|make sure|update|replace|increase|wrap|improve|ensure|set|use|remove|convert|keep)\b/i;
+    for (const finding of result.findings) {
+      expect(finding.fixPrompt).toMatch(actionWords);
+    }
+  });
+
+  test("mobile fixPrompts are natural language — no HTML tags", () => {
+    const dir = setupFiles({
+      "index.html": '<html><head></head><body><table><tr><td>Data</td></tr></table></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const mobileFindings = result.findings.filter((f) => f.category === "mobile");
+    expect(mobileFindings.length).toBeGreaterThan(0);
+    for (const finding of mobileFindings) {
+      expect(finding.fixPrompt).not.toMatch(/<[a-zA-Z][^>]*>/);
+      expect(finding.fixPrompt).not.toContain("<");
+      expect(finding.fixPrompt).not.toContain(">");
+    }
+  });
+
+  test("SEO fixPrompts are natural language — no HTML tags", () => {
+    const dir = setupFiles({
+      "index.html": "<html><head></head><body></body></html>",
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const seoFindings = result.findings.filter((f) => f.category === "seo");
+    expect(seoFindings.length).toBeGreaterThan(0);
+    for (const finding of seoFindings) {
+      expect(finding.fixPrompt).not.toMatch(/<[a-zA-Z][^>]*>/);
+      expect(finding.fixPrompt).not.toContain("<");
+      expect(finding.fixPrompt).not.toContain(">");
+    }
+  });
+
+  test("form fixPrompts are natural language — no HTML tags", () => {
+    const dir = setupFiles({
+      "index.html": '<html><body><form><input type="text" name="email"></form></body></html>',
+    });
+    const scanner = new CodeScanner(dir);
+    const result = scanner.scan();
+    const formFindings = result.findings.filter((f) => f.category === "forms");
+    expect(formFindings.length).toBeGreaterThan(0);
+    for (const finding of formFindings) {
+      expect(finding.fixPrompt).not.toMatch(/<[a-zA-Z][^>]*>/);
+      expect(finding.fixPrompt).not.toContain("<");
+      expect(finding.fixPrompt).not.toContain(">");
+    }
+  });
+
   test("no mobile CSS issues on well-formed responsive page", () => {
     const dir = setupFiles({
       "index.html": `<html><head>
