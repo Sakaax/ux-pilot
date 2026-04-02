@@ -25,13 +25,43 @@
 
 A Claude Code plugin that acts as a **senior UX designer**. It doesn't generate code blindly — it understands your product, challenges your choices, shows you the result in a live browser preview, and helps you iterate until the flow is validated.
 
-## What's New (v0.1.2)
+## What's New (v0.1.3)
 
-- **HTML Audit Report** — audit results now open as a styled, navigable HTML page in your browser
-- **Fix Prompts** — each finding includes a ready-to-paste prompt to fix the issue in Claude Code
-- **Persistent UX Brief** — discovery saves `ux-pilot/ux-brief.md` in your project, updated as you go
+- **HTML Audit Report** — audit results open as a styled HTML page in your browser with score, severity grouping, and category breakdown
+- **Fix Prompts (natural language)** — each finding includes a no-coder-friendly prompt you can paste into Claude Code to fix the issue. No HTML tags, just plain instructions
+- **Persistent UX Brief** — discovery saves `ux-pilot/ux-brief.md` in your project, updated as you make decisions
+- **Visual Audit with Playwright** — if [Playwright MCP](https://github.com/microsoft/playwright-mcp) is installed, the audit captures screenshots at 375px, 768px, and 1280px and analyzes the visual result. Falls back to static CSS analysis if not available
+- **6 Mobile CSS Checks** — detects tables without responsive wrapper, fixed widths > 500px, small touch targets (< 44px), small fonts (< 14px), nav without flex-wrap, and CSS widths without media queries
+- **Mobile Score Calibration** — mobile findings now carry 1.5x penalty weight for more accurate scoring
+- **Screenshot References** — findings from visual audit include clickable screenshot thumbnails in the HTML report
+- **Anti AI-Slop: No Emojis** — the plugin now uses inline SVG icons instead of emojis (emojis render differently across OS/browsers)
+- **Finding Numbering** — each finding shows its index (1/10, 2/10...) for easier tracking
+- **Back to Top** — link at the bottom of the HTML report
 
 > Having issues updating? See [Troubleshooting](#troubleshooting).
+
+### Optional: Playwright MCP for Visual Audit
+
+For the best audit results, install [Playwright MCP](https://github.com/microsoft/playwright-mcp) to enable screenshot-based visual analysis:
+
+```bash
+npm install -g @playwright/mcp
+```
+
+Then add it to your Claude Code MCP config (`~/.claude/mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp"]
+    }
+  }
+}
+```
+
+Without Playwright, the audit uses static CSS analysis only — still useful, but can't detect visual overflow or layout issues that only appear when the page is rendered.
 
 ## Why ux-pilot?
 
